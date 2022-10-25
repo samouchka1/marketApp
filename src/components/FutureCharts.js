@@ -14,9 +14,8 @@ import {
     Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { SPX, NDX, VIX } from '../data/Charts';
+import { ES, NQ, GC, SI, CL } from '../data/Charts';
 
-// const indexes = [ SPX, NDX, VIX ]
 
 
 ChartJS.register(
@@ -32,10 +31,9 @@ ChartJS.register(
 export const options = {
     responsive: true,
     plugins: {
-        legend: {
-        position: 'top',
-        display: false
-        },
+        // legend: {
+        // position: 'top',
+        // },
         title: {
         display: true,
         text: '',
@@ -49,26 +47,34 @@ const gridStyle = {
 }
 
 
-const GridCharts = () => {
+const IndexCharts = () => {
   return (
     <Box>
         <Grid container sx={gridStyle}>
             {/* {indexes.map((chart)=> ( */}
                 <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={SPX}/>
+                    <Line options={options} data={ES}/>
                 </Grid>
             {/* ))} */}
 
                 <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={NDX}/>
+                    <Line options={options} data={NQ}/>
                 </Grid>
 
                 <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={VIX}/>
+                    <Line options={options} data={GC}/>
+                </Grid>
+
+                <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
+                    <Line options={options} data={SI}/>
+                </Grid>
+
+                <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
+                    <Line options={options} data={CL}/>
                 </Grid>
         </Grid>
     </Box>
   )
 }
 
-export default GridCharts
+export default IndexCharts;

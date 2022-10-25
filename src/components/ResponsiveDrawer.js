@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     AppBar,
     Box,
@@ -13,7 +13,9 @@ import {
     Typography,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import GridCharts from './GridCharts';
+import IndexCharts from './IndexCharts';
+import FutureCharts from './FutureCharts';
+import StockCharts from './StockCharts';
 
 const drawerWidth = 240;
 
@@ -25,6 +27,8 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const [section, setSection] = useState('');
+
   const drawer = (
     <div>
       <Toolbar />
@@ -32,7 +36,7 @@ function ResponsiveDrawer(props) {
       <List>
         {['Indexes', 'Futures', 'Stocks', 'ETFs'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton >
+            <ListItemButton onClick={()=> setSection(text)}>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -105,7 +109,11 @@ function ResponsiveDrawer(props) {
       >
         <Toolbar /> {/* respects header space */}
 
-          <GridCharts />
+          {section === 'Indexes' ? <IndexCharts /> : undefined }
+          {section === 'Futures' ? <FutureCharts /> : undefined }
+          {section === 'Stocks' ? <StockCharts /> : undefined }
+          {/* {section === 'ETFs' ? <GridCharts /> : undefined } */}
+          
 
       </Box>
     </Box>
