@@ -2,7 +2,10 @@ import React from 'react';
 import {
     Box,
     Grid,
+    Typography,
+    Paper
 } from '@mui/material';
+import { Fade } from "react-awesome-reveal";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -14,10 +17,8 @@ import {
     Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { options, gridStyle, center } from '../data/Charts';
 import { SPX, NDX, DJX, RUT, VIX, DJU, DJT } from '../data/Charts';
-
-// const indexes = [ SPX, NDX, VIX ]
-
 
 ChartJS.register(
     CategoryScale,
@@ -29,59 +30,63 @@ ChartJS.register(
     Legend
   );
 
-export const options = {
-    responsive: true,
-    plugins: {
-        // legend: {
-        // position: 'top',
-        // },
-        title: {
-        display: true,
-        text: '',
-        },
-    },
-};
-
-const gridStyle = {
-    justifyContent: 'center',
-    gap: '1.1rem'
-}
-
-
 const IndexCharts = () => {
   return (
     <Box>
-        <Grid container sx={gridStyle}>
-            {/* {indexes.map((chart)=> ( */}
-                <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={SPX}/>
-                </Grid>
-            {/* ))} */}
+        <Fade cascade damping={0.15}>
+            <Grid container sx={gridStyle}>
 
-                <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={NDX}/>
-                </Grid>
+                    <Grid item xs={8} md={3}>
+                        <Paper elevation="4">
+                            <Line options={options} data={SPX}/>
+                            <Typography sx={center}>SPX</Typography>
+                        </Paper>
+                    </Grid>
 
-                <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={DJX}/>
-                </Grid>
+                    <Grid item xs={8} md={3}>
+                        <Paper elevation="4">
+                            <Line options={options} data={NDX}/>
+                            <Typography sx={center}>NDX</Typography>
+                        </Paper>
+                    </Grid>
 
-                <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={RUT}/>
-                </Grid>
+                    <Grid item xs={8} md={3}>
+                        <Paper elevation="4">
+                            <Line options={options} data={DJX}/>
+                            <Typography sx={center}>DJX</Typography>
+                        </Paper>
+                    </Grid>
 
-                <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={VIX}/>
-                </Grid>
+                    <Grid item xs={8} md={3}>
+                        <Paper elevation="4">
+                            <Line options={options} data={RUT}/>
+                            <Typography sx={center}>RUT</Typography>
+                        </Paper>
+                    </Grid>
 
-                <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={DJU}/>
-                </Grid>
+                    <Grid item xs={8} md={3}>
+                        <Paper elevation="4">
+                            <Line options={options} data={VIX}/>
+                            <Typography sx={center}>VIX</Typography>
+                        </Paper>
+                    </Grid>
 
-                <Grid item xs={8} md={3} sx={{border: 'solid black 1px'}}>
-                    <Line options={options} data={DJT}/>
-                </Grid>
-        </Grid>
+                    <Grid item xs={8} md={3}>
+                        <Paper elevation="4">
+                            <Line options={options} data={DJU}/>
+                            <Typography sx={center}>DJU</Typography>
+                        </Paper>
+                    </Grid>
+
+                    <Grid item xs={8} md={3}>
+                        <Paper elevation="4">
+                            <Line options={options} data={DJT}/>
+                            <Typography sx={center}>DJT</Typography>
+                        </Paper>
+                    </Grid>
+                
+            </Grid>
+        </Fade>
     </Box>
   )
 }

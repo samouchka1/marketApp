@@ -34,9 +34,9 @@ function ResponsiveDrawer(props) {
       <Toolbar />
       <Divider />
       <List>
-        {['Indexes', 'Futures', 'Stocks', 'ETFs'].map((text, index) => (
+        {['Indexes', 'Futures', 'Stocks'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={()=> setSection(text)}>
+            <ListItemButton onClick={()=> setSection(text)} className={section === text ? 'Mui-selected' : undefined}>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -76,7 +76,6 @@ function ResponsiveDrawer(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"
@@ -112,7 +111,6 @@ function ResponsiveDrawer(props) {
           {section === 'Indexes' ? <IndexCharts /> : undefined }
           {section === 'Futures' ? <FutureCharts /> : undefined }
           {section === 'Stocks' ? <StockCharts /> : undefined }
-          {/* {section === 'ETFs' ? <GridCharts /> : undefined } */}
           
 
       </Box>
