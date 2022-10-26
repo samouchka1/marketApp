@@ -29,7 +29,7 @@ const titleAreaStyles = {
   padding: '.5rem 1rem',
   margin: {
     md: '0',
-    xs: '0 0 0 1.8rem'
+    xs: '0 0 0 1rem'
   }
 }
 
