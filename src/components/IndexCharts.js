@@ -3,7 +3,7 @@ import {
     Box,
     Grid,
     Typography,
-    Paper
+    Paper,
 } from '@mui/material';
 import { Fade } from "react-awesome-reveal";
 import {
@@ -31,6 +31,7 @@ ChartJS.register(
   );
 
 const IndexCharts = () => {
+
   return (
     <Box>
         <Fade cascade damping={0.15}>

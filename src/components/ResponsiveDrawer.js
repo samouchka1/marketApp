@@ -12,10 +12,12 @@ import {
     Toolbar,
     Typography,
 } from '@mui/material';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
 import MenuIcon from '@mui/icons-material/Menu';
 import IndexCharts from './IndexCharts';
 import FutureCharts from './FutureCharts';
 import StockCharts from './StockCharts';
+import Welcome from './Welcome';
 
 const drawerWidth = 240;
 
@@ -36,7 +38,9 @@ function ResponsiveDrawer(props) {
       <List>
         {['Indexes', 'Futures', 'Stocks'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={()=> setSection(text)} className={section === text ? 'Mui-selected' : undefined}>
+            <ListItemButton onClick={()=> setSection(text)} 
+              className={section === text ? 'Mui-selected' : undefined}
+            >
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -54,6 +58,7 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: '#3e3e3e'
         }}
       >
         <Toolbar>
@@ -66,9 +71,12 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
+
+          <ShowChartIcon fonSize="large" sx={{padding: '0 2rem 0 1rem'}}/>
           <Typography variant="h6" noWrap component="div">
             Market App
           </Typography>
+
         </Toolbar>
       </AppBar>
       <Box
@@ -104,10 +112,15 @@ function ResponsiveDrawer(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{ 
+          flexGrow: 1, p: 3, 
+          width: { sm: `calc(100% - ${drawerWidth}px)` }, 
+          backgroundColor: '#dadada80'
+        }}
       >
         <Toolbar /> {/* respects header space */}
 
+          {section === '' ? <Welcome /> : undefined}
           {section === 'Indexes' ? <IndexCharts /> : undefined }
           {section === 'Futures' ? <FutureCharts /> : undefined }
           {section === 'Stocks' ? <StockCharts /> : undefined }
