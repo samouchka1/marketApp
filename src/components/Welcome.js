@@ -13,8 +13,22 @@ const Welcome = () => {
                 component="img"
                 alt="Welcome Image"
                 src={process.env.PUBLIC_URL + '/images/bullmarket.jpg'}
-                height="100vh"
-                width="auto"
+                sx={{
+                  height: {
+                    md: '100vh',
+                    xs: 'auto'
+                  },
+                  width: {
+                    md: 'auto',
+                    xs: '100vw'
+                  },
+                  margin: {
+                    md: '0 auto',
+                    xs: '0 0 0 -2.2rem'
+                  }
+                }}
+                // height="100vh"
+                // width="auto"
             />
         </Slide>
     </Container>

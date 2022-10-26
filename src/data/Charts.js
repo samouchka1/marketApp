@@ -21,7 +21,13 @@ export const gridStyle = {
     gap: '1.5rem'
 }
 
-export const center = { textAlign: 'center'}
+export const chartTitleStyles = { 
+    textAlign: 'center',
+    fontSize: {
+        md: '1rem',
+        xs: '.80rem'
+    }
+}
 
 
 
@@ -167,6 +173,29 @@ export const CL = {
         {
         label: 'CL',
         data: labels.map(() => faker.datatype.number({ min: 60, max: 110 })),
+        borderColor: '#318b3a',
+        backgroundColor: '#318b3a80',
+        },
+    ],
+};
+
+export const ZC = {
+    labels,
+    datasets: [
+        {
+        label: 'ZC',
+        data: labels.map(() => faker.datatype.number({ min: 531, max: 766 })),
+        borderColor: '#318b3a',
+        backgroundColor: '#318b3a80',
+        },
+    ],
+};
+export const ZW = {
+    labels,
+    datasets: [
+        {
+        label: 'ZW',
+        data: labels.map(() => faker.datatype.number({ min: 743, max: 1282 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
         },

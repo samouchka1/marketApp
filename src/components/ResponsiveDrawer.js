@@ -21,9 +21,20 @@ import StockCharts from './StockCharts';
 import Welcome from './Welcome';
 import News from './News';
 
+const titleAreaStyles = {
+  display: 'flex', 
+  alignItems: 'center', 
+  backgroundColor: '#505050', 
+  padding: '.5rem 1rem',
+  margin: {
+    md: '0',
+    xs: '0 0 0 1.8rem'
+  }
+}
+
 const drawerWidth = 240;
 
-function ResponsiveDrawer(props) {
+const ResponsiveDrawer = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -74,7 +85,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
 
-          <Paper elevation={4} sx={{display: 'flex', alignItems: 'center', backgroundColor: '#505050', padding: '.5rem 1rem'}}>      
+          <Paper elevation={4} sx={titleAreaStyles}>      
             <ShowChartIcon fonSize="large" sx={{padding: '0 1rem 0 0', color: '#2fb12f'}}/>
             <Typography variant="h6" noWrap component="div" color="white">
               Market App

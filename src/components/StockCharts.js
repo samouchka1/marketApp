@@ -17,7 +17,7 @@ import {
     Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { options, gridStyle, center } from '../data/Charts';
+import { options, gridStyle, chartTitleStyles } from '../data/Charts';
 import { AAPL, AMZN, JNJ, T, TSLA, MSFT, ZM, SHOP } from '../data/Charts';
 
 ChartJS.register(
@@ -38,56 +38,56 @@ const StockCharts = () => {
                     <Grid item xs={8} md={3}>
                         <Paper elevation="4">
                             <Line options={options} data={AAPL}/>
-                            <Typography sx={center}>AAPL</Typography>
+                            <Typography sx={chartTitleStyles} noWrap>AAPL - Apple</Typography>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={8} md={3}>
                         <Paper elevation="4">
                             <Line options={options} data={AMZN}/>
-                            <Typography sx={center}>AMZN</Typography>
+                            <Typography sx={chartTitleStyles} noWrap>AMZN - Amazon</Typography>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={8} md={3}>
                         <Paper elevation="4">
                             <Line options={options} data={JNJ}/>
-                            <Typography sx={center}>JNJ</Typography>
+                            <Typography sx={chartTitleStyles} noWrap>JNJ - Johnson & Johnson</Typography>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={8} md={3}>
                         <Paper elevation="4">
                             <Line options={options} data={T}/>
-                            <Typography sx={center}>T</Typography>
+                            <Typography sx={chartTitleStyles} noWrap>T - AT&T</Typography>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={8} md={3}>
                         <Paper elevation="4">
                             <Line options={options} data={TSLA}/>
-                            <Typography sx={center}>TSLA</Typography>
+                            <Typography sx={chartTitleStyles} noWrap>TSLA - Tesla</Typography>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={8} md={3}>
                         <Paper elevation="4">
                             <Line options={options} data={MSFT}/>
-                            <Typography sx={center}>MSFT</Typography>
+                            <Typography sx={chartTitleStyles} noWrap>MSFT - Microsoft</Typography>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={8} md={3}>
                         <Paper elevation="4">
                             <Line options={options} data={ZM}/>
-                            <Typography sx={center}>ZM</Typography>
+                            <Typography sx={chartTitleStyles} noWrap>ZM - Zoom</Typography>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={8} md={3}>
                         <Paper elevation="4">
                             <Line options={options} data={SHOP}/>
-                            <Typography sx={center}>SHOP</Typography>
+                            <Typography sx={chartTitleStyles} noWrap>SHOP - Shopify</Typography>
                         </Paper>
                     </Grid>
             </Grid>
