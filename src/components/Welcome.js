@@ -27,8 +27,6 @@ const Welcome = () => {
                     xs: '0 0 0 -2.2rem'
                   }
                 }}
-                // height="100vh"
-                // width="auto"
             />
         </Slide>
     </Container>

@@ -11,6 +11,7 @@ import {
     ListItemText,
     Toolbar,
     Paper,
+    Button,
     Typography,
 } from '@mui/material';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
@@ -85,11 +86,13 @@ const ResponsiveDrawer = (props) => {
             <MenuIcon />
           </IconButton>
 
-          <Paper elevation={4} sx={titleAreaStyles}>      
-            <ShowChartIcon fonSize="large" sx={{padding: '0 1rem 0 0', color: '#2fb12f'}}/>
-            <Typography variant="h6" noWrap component="div" color="white">
-              Market App
-            </Typography>
+          <Paper elevation={4} sx={titleAreaStyles}> 
+            <Button onClick={() => setSection('')}>   
+              <ShowChartIcon fonSize="large" sx={{padding: '0 1rem 0 0', color: '#2fb12f'}}/>
+              <Typography variant="h6" noWrap component="div" color="white">
+                Market App
+              </Typography>
+            </Button>  
           </Paper>  
 
         </Toolbar>
