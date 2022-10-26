@@ -10,6 +10,7 @@ import {
     ListItemButton,
     ListItemText,
     Toolbar,
+    Paper,
     Typography,
 } from '@mui/material';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
@@ -18,6 +19,7 @@ import IndexCharts from './IndexCharts';
 import FutureCharts from './FutureCharts';
 import StockCharts from './StockCharts';
 import Welcome from './Welcome';
+import News from './News';
 
 const drawerWidth = 240;
 
@@ -36,7 +38,7 @@ function ResponsiveDrawer(props) {
       <Toolbar />
       <Divider />
       <List>
-        {['Indexes', 'Futures', 'Stocks'].map((text, index) => (
+        {['News', 'Indexes', 'Futures', 'Stocks'].map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton onClick={()=> setSection(text)} 
               className={section === text ? 'Mui-selected' : undefined}
@@ -58,7 +60,7 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          backgroundColor: '#3e3e3e'
+          backgroundColor: '#3e3e3e' //<<<<  bgcolor
         }}
       >
         <Toolbar>
@@ -72,17 +74,18 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
 
-          <ShowChartIcon fonSize="large" sx={{padding: '0 2rem 0 1rem'}}/>
-          <Typography variant="h6" noWrap component="div">
-            Market App
-          </Typography>
+          <Paper elevation={4} sx={{display: 'flex', alignItems: 'center', backgroundColor: '#505050', padding: '.5rem 1rem'}}>      
+            <ShowChartIcon fonSize="large" sx={{padding: '0 1rem 0 0', color: '#2fb12f'}}/>
+            <Typography variant="h6" noWrap component="div" color="white">
+              Market App
+            </Typography>
+          </Paper>  
 
         </Toolbar>
       </AppBar>
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
       >
         <Drawer
           container={container}
@@ -120,7 +123,8 @@ function ResponsiveDrawer(props) {
       >
         <Toolbar /> {/* respects header space */}
 
-          {section === '' ? <Welcome /> : undefined}
+          {section === '' ? <Welcome /> : undefined }
+          {section === 'News' ? <News /> : undefined }
           {section === 'Indexes' ? <IndexCharts /> : undefined }
           {section === 'Futures' ? <FutureCharts /> : undefined }
           {section === 'Stocks' ? <StockCharts /> : undefined }
