@@ -29,7 +29,7 @@ const titleAreaStyles = {
   padding: '.5rem 1rem',
   margin: {
     md: '0',
-    xs: '0 0 0 1rem'
+    xs: '0 0 0 .8rem'
   }
 }
 
@@ -52,7 +52,7 @@ const ResponsiveDrawer = (props) => {
       <List>
         {['News', 'Indexes', 'Futures', 'Stocks'].map((text) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={()=> setSection(text)} 
+            <ListItemButton onClick={()=> {setSection(text); handleDrawerToggle();} } 
               className={section === text ? 'Mui-selected' : undefined}
             >
               <ListItemText primary={text} />
