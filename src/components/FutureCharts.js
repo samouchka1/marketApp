@@ -45,7 +45,7 @@ const IndexCharts = () => {
 
                     <Grid item xs={8} md={3}>
                         <Paper elevation="4">
-                            <Line options={options} data={NQ}/>
+                            <Line options={options} data={NQ} /> 
                             <Typography sx={chartTitleStyles} noWrap>NQ - Nasdaq Futures</Typography>
                         </Paper>
                     </Grid>
