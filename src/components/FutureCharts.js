@@ -20,6 +20,8 @@ import { Line } from 'react-chartjs-2';
 import { options, gridStyle, chartTitleStyles } from '../data/Charts';
 import { ES, NQ, GC, SI, CL, ZC, ZW } from '../data/Charts';
 
+const futures = [ES, NQ, GC, SI, CL, ZC, ZW ];
+
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -35,55 +37,16 @@ const IndexCharts = () => {
     <Box>
         <Fade cascade damping={0.15}>
             <Grid container sx={gridStyle}>
-                    <Grid item xs={8} md={3}>
+                {futures.map((future) => (
+                    <Grid item xs={8} md={3} key={future}>
                         <Paper elevation="4">
-                            <Line options={options} data={ES}/>
-                            <Typography sx={chartTitleStyles} noWrap>ES - S&P500 Futures</Typography>
+                            <Line options={options} data={future}/>
+                            <Typography sx={chartTitleStyles} noWrap>
+                                {future.datasets[0].label}    
+                            </Typography>
                         </Paper>
                     </Grid>
-                {/* ))} */}
-
-                    <Grid item xs={8} md={3}>
-                        <Paper elevation="4">
-                            <Line options={options} data={NQ} /> 
-                            <Typography sx={chartTitleStyles} noWrap>NQ - Nasdaq Futures</Typography>
-                        </Paper>
-                    </Grid>
-
-                    <Grid item xs={8} md={3}>
-                        <Paper elevation="4">
-                            <Line options={options} data={GC}/>
-                            <Typography sx={chartTitleStyles} noWrap>GC - Gold Futures</Typography>
-                        </Paper>
-                    </Grid>
-
-                    <Grid item xs={8} md={3}>
-                        <Paper elevation="4">
-                            <Line options={options} data={SI}/>
-                            <Typography sx={chartTitleStyles} noWrap>SI - Silver Futures</Typography>
-                        </Paper>
-                    </Grid>
-
-                    <Grid item xs={8} md={3}>
-                        <Paper elevation="4">
-                            <Line options={options} data={CL}/>
-                            <Typography sx={chartTitleStyles} noWrap>CL - Crude Oil Futures</Typography>
-                        </Paper>
-                    </Grid>
-
-                    <Grid item xs={8} md={3}>
-                        <Paper elevation="4">
-                            <Line options={options} data={ZC}/>
-                            <Typography sx={chartTitleStyles} noWrap>ZC - Corn Futures</Typography>
-                        </Paper>
-                    </Grid>
-
-                    <Grid item xs={8} md={3}>
-                        <Paper elevation="4">
-                            <Line options={options} data={ZW}/>
-                            <Typography sx={chartTitleStyles} noWrap>ZW - Wheat Futures</Typography>
-                        </Paper>
-                    </Grid>
+                ))}
             </Grid>
         </Fade>
     </Box>

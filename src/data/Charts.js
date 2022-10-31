@@ -37,7 +37,7 @@ export const SPX = {
     labels,
     datasets: [
         {
-        label: 'SPX',
+        label: 'SPX - S&P500 Index',
         data: labels.map(() => faker.datatype.number({ min: 3500, max: 4800 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -49,7 +49,7 @@ export const NDX = {
     labels,
     datasets: [
         {
-        label: 'NDX',
+        label: 'NDX - Nasdaq Index',
         data: labels.map(() => faker.datatype.number({ min: 14400, max: 16700 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -61,7 +61,7 @@ export const DJX = {
     labels,
     datasets: [
         {
-        label: 'DJX',
+        label: 'DJX - Dow Jones Index',
         data: labels.map(() => faker.datatype.number({ min: 29000, max: 36000 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -73,7 +73,7 @@ export const RUT = {
     labels,
     datasets: [
         {
-        label: 'RUT',
+        label: 'RUT - Russell 2000 Index',
         data: labels.map(() => faker.datatype.number({ min: 1600, max: 2400 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -85,7 +85,7 @@ export const VIX = {
     labels,
     datasets: [
         {
-        label: 'VIX',
+        label: 'VIX - S&P500 Volatility Index',
         data: labels.map(() => faker.datatype.number({ min: 14, max: 39 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -97,7 +97,7 @@ export const DJU = {
     labels,
     datasets: [
         {
-        label: 'DJU',
+        label: 'DJU - Dow Jones Utilities Index',
         data: labels.map(() => faker.datatype.number({ min: 860, max: 1060 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -109,7 +109,7 @@ export const DJT = {
     labels,
     datasets: [
         {
-        label: 'DJT',
+        label: 'DJT - Dow Jones Transports Index',
         data: labels.map(() => faker.datatype.number({ min: 12600, max: 16800 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -123,7 +123,7 @@ export const ES = {
     labels,
     datasets: [
         {
-        label: 'ES',
+        label: 'ES - S&P500 Futures',
         data: labels.map(() => faker.datatype.number({ min: 3500, max: 4800 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -135,7 +135,7 @@ export const NQ = {
     labels,
     datasets: [
         {
-        label: 'NQ',
+        label: 'NQ - Nasdaq Futures',
         data: labels.map(() => faker.datatype.number({ min: 12600, max: 16800 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -147,7 +147,7 @@ export const GC = {
     labels,
     datasets: [
         {
-        label: 'GC',
+        label: 'GC - Gold Futures',
         data: labels.map(() => faker.datatype.number({ min: 1600, max: 2000 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -159,7 +159,7 @@ export const SI = {
     labels,
     datasets: [
         {
-        label: 'SI',
+        label: 'SI - Silver Futures',
         data: labels.map(() => faker.datatype.number({ min: 17, max: 27 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -171,7 +171,7 @@ export const CL = {
     labels,
     datasets: [
         {
-        label: 'CL',
+        label: 'CL - Crude Oil Futures',
         data: labels.map(() => faker.datatype.number({ min: 60, max: 110 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -183,7 +183,7 @@ export const ZC = {
     labels,
     datasets: [
         {
-        label: 'ZC',
+        label: 'ZC - Corn Futures',
         data: labels.map(() => faker.datatype.number({ min: 531, max: 766 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -194,7 +194,7 @@ export const ZW = {
     labels,
     datasets: [
         {
-        label: 'ZW',
+        label: 'ZW - Wheat Futures',
         data: labels.map(() => faker.datatype.number({ min: 743, max: 1282 })),
         borderColor: '#318b3a',
         backgroundColor: '#318b3a80',
@@ -203,6 +203,19 @@ export const ZW = {
 };
 
 //STOCKS
+
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': 'e5d585626emsh1fe0ea07c55b14cp12d361jsn8c352d5c7fe5',
+// 		'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
+// 	}
+// };
+
+// fetch('https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/AAPL,AMZN,JNJ,T,TSLA,MSFT,ZM,SHOP', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
 
 export const AAPL = {
     labels,

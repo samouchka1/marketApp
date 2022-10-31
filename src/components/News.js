@@ -20,8 +20,7 @@ const News = () => {
                         <Link href="#news" sx={{textDecoration: 'none', color: '#3e3e3e'}}>
                             <Box sx={{display: 'flex', alignItems: 'center'}}>
                                 <Typography variant="subtitle2">
-                                    {/* {faker.date.recent(10)} <<< not working*/}
-                                    1/1/23
+                                    {/* {faker.date.past(1)} */}
                                 </Typography>
                                 <Typography sx={{fontSize: {md: '19px', xs: '17px'}, m: '1rem', fontWeight: '600'}}>
                                     {faker.lorem.lines(1)}
