@@ -37,10 +37,12 @@ export const SPX = {
     labels,
     datasets: [
         {
-        label: 'SPX - S&P500 Index',
-        data: labels.map(() => faker.datatype.number({ min: 3500, max: 4800 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'SPX - S&P500 Index',
+            data: labels.map(() => faker.datatype.number({ min: 3500, max: 4800 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -49,10 +51,12 @@ export const NDX = {
     labels,
     datasets: [
         {
-        label: 'NDX - Nasdaq Index',
-        data: labels.map(() => faker.datatype.number({ min: 14400, max: 16700 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'NDX - Nasdaq Index',
+            data: labels.map(() => faker.datatype.number({ min: 14400, max: 16700 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -61,10 +65,12 @@ export const DJX = {
     labels,
     datasets: [
         {
-        label: 'DJX - Dow Jones Index',
-        data: labels.map(() => faker.datatype.number({ min: 29000, max: 36000 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'DJX - Dow Jones Index',
+            data: labels.map(() => faker.datatype.number({ min: 29000, max: 36000 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -73,10 +79,12 @@ export const RUT = {
     labels,
     datasets: [
         {
-        label: 'RUT - Russell 2000 Index',
-        data: labels.map(() => faker.datatype.number({ min: 1600, max: 2400 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'RUT - Russell 2000 Index',
+            data: labels.map(() => faker.datatype.number({ min: 1600, max: 2400 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -85,10 +93,12 @@ export const VIX = {
     labels,
     datasets: [
         {
-        label: 'VIX - S&P500 Volatility Index',
-        data: labels.map(() => faker.datatype.number({ min: 14, max: 39 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'VIX - S&P500 Volatility Index',
+            data: labels.map(() => faker.datatype.number({ min: 14, max: 39 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -97,10 +107,12 @@ export const DJU = {
     labels,
     datasets: [
         {
-        label: 'DJU - Dow Jones Utilities Index',
-        data: labels.map(() => faker.datatype.number({ min: 860, max: 1060 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'DJU - Dow Jones Utilities Index',
+            data: labels.map(() => faker.datatype.number({ min: 860, max: 1060 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -109,10 +121,12 @@ export const DJT = {
     labels,
     datasets: [
         {
-        label: 'DJT - Dow Jones Transports Index',
-        data: labels.map(() => faker.datatype.number({ min: 12600, max: 16800 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'DJT - Dow Jones Transports Index',
+            data: labels.map(() => faker.datatype.number({ min: 12600, max: 16800 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -123,10 +137,12 @@ export const ES = {
     labels,
     datasets: [
         {
-        label: 'ES - S&P500 Futures',
-        data: labels.map(() => faker.datatype.number({ min: 3500, max: 4800 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'ES - S&P500 Futures',
+            data: labels.map(() => faker.datatype.number({ min: 3500, max: 4800 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -135,10 +151,12 @@ export const NQ = {
     labels,
     datasets: [
         {
-        label: 'NQ - Nasdaq Futures',
-        data: labels.map(() => faker.datatype.number({ min: 12600, max: 16800 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'NQ - Nasdaq Futures',
+            data: labels.map(() => faker.datatype.number({ min: 12600, max: 16800 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -147,10 +165,12 @@ export const GC = {
     labels,
     datasets: [
         {
-        label: 'GC - Gold Futures',
-        data: labels.map(() => faker.datatype.number({ min: 1600, max: 2000 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'GC - Gold Futures',
+            data: labels.map(() => faker.datatype.number({ min: 1600, max: 2000 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -159,10 +179,12 @@ export const SI = {
     labels,
     datasets: [
         {
-        label: 'SI - Silver Futures',
-        data: labels.map(() => faker.datatype.number({ min: 17, max: 27 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'SI - Silver Futures',
+            data: labels.map(() => faker.datatype.number({ min: 17, max: 27 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -171,10 +193,12 @@ export const CL = {
     labels,
     datasets: [
         {
-        label: 'CL - Crude Oil Futures',
-        data: labels.map(() => faker.datatype.number({ min: 60, max: 110 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'CL - Crude Oil Futures',
+            data: labels.map(() => faker.datatype.number({ min: 60, max: 110 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -183,10 +207,12 @@ export const ZC = {
     labels,
     datasets: [
         {
-        label: 'ZC - Corn Futures',
-        data: labels.map(() => faker.datatype.number({ min: 531, max: 766 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'ZC - Corn Futures',
+            data: labels.map(() => faker.datatype.number({ min: 531, max: 766 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -194,10 +220,12 @@ export const ZW = {
     labels,
     datasets: [
         {
-        label: 'ZW - Wheat Futures',
-        data: labels.map(() => faker.datatype.number({ min: 743, max: 1282 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'ZW - Wheat Futures',
+            data: labels.map(() => faker.datatype.number({ min: 743, max: 1282 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -221,10 +249,12 @@ export const AAPL = {
     labels,
     datasets: [
         {
-        label: 'AAPL',
-        data: labels.map(() => faker.datatype.number({ min: 131, max: 179 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'AAPL',
+            data: labels.map(() => faker.datatype.number({ min: 131, max: 179 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -233,10 +263,12 @@ export const AMZN = {
     labels,
     datasets: [
         {
-        label: 'AMZN',
-        data: labels.map(() => faker.datatype.number({ min: 106, max: 183 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'AMZN',
+            data: labels.map(() => faker.datatype.number({ min: 106, max: 183 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -245,10 +277,12 @@ export const JNJ = {
     labels,
     datasets: [
         {
-        label: 'JNJ',
-        data: labels.map(() => faker.datatype.number({ min: 160, max: 182 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'JNJ',
+            data: labels.map(() => faker.datatype.number({ min: 160, max: 182 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -257,10 +291,12 @@ export const T = {
     labels,
     datasets: [
         {
-        label: 'T',
-        data: labels.map(() => faker.datatype.number({ min: 14, max: 21 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'T',
+            data: labels.map(() => faker.datatype.number({ min: 14, max: 21 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -269,10 +305,12 @@ export const MSFT = {
     labels,
     datasets: [
         {
-        label: 'MSFT',
-        data: labels.map(() => faker.datatype.number({ min: 228, max: 343 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'MSFT',
+            data: labels.map(() => faker.datatype.number({ min: 228, max: 343 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -281,10 +319,12 @@ export const ZM = {
     labels,
     datasets: [
         {
-        label: 'ZM',
-        data: labels.map(() => faker.datatype.number({ min: 83, max: 264 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'ZM',
+            data: labels.map(() => faker.datatype.number({ min: 83, max: 264 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -293,10 +333,12 @@ export const SHOP = {
     labels,
     datasets: [
         {
-        label: 'SHOP',
-        data: labels.map(() => faker.datatype.number({ min: 29, max: 166 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'SHOP',
+            data: labels.map(() => faker.datatype.number({ min: 29, max: 166 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
@@ -305,10 +347,12 @@ export const TSLA = {
     labels,
     datasets: [
         {
-        label: 'TSLA',
-        data: labels.map(() => faker.datatype.number({ min: 224, max: 407 })),
-        borderColor: '#318b3a',
-        backgroundColor: '#318b3a80',
+            label: 'TSLA',
+            data: labels.map(() => faker.datatype.number({ min: 224, max: 407 })),
+            borderColor: '#318b3a',
+            backgroundColor: '#00000000',
+            pointBorderWidth: 0,
+            pointBorderColor: '#00000000',
         },
     ],
 };
