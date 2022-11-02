@@ -20,7 +20,8 @@ import IndexCharts from './components/IndexCharts';
 import FutureCharts from './components/FutureCharts';
 import StockCharts from './components/StockCharts';
 import Welcome from './components/Welcome';
-import News from './components/News';
+import News from './components/News'
+import './App.css';
 
 const titleAreaStyles = {
   display: 'flex', 
@@ -119,16 +120,16 @@ const App = (props) => {
         >
           {drawer}
         </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
+          <Drawer
+            open
+            variant="permanent"
+            sx={{
+              display: { xs: 'none', sm: 'block' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            }}
+          >
+            {drawer}
+          </Drawer>
       </Box>
       <Box
         component="main"

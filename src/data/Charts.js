@@ -43,6 +43,7 @@ export const SPX = {
             backgroundColor: '#00000000',
             pointBorderWidth: 0,
             pointBorderColor: '#00000000',
+            // fill: true
         },
     ],
 };
