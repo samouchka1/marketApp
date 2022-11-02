@@ -75,7 +75,7 @@ const FutureCharts = () => {
                     </Grid>
                 ))}
 
-<Dialog
+                <Dialog
                     open={open}
                     onClose={handleClose}
                     sx={{marginTop: '2.5rem'}}
