@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import { Fade } from "react-awesome-reveal";
 import {faker} from '@faker-js/faker';
-import OpenInFullIcon from '@mui/icons-material/OpenInFull';
+import DehazeIcon from '@mui/icons-material/Dehaze';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -69,7 +69,7 @@ const StockCharts = () => {
                                 handleClickOpen(); 
                                 selectValue(`${stock.datasets[0].label}`)
                             }}>
-                                <OpenInFullIcon fontSize="small" sx={{margin: '.35rem 0'}} />
+                                <DehazeIcon fontSize="small" sx={{margin: '.35rem 0'}} />
                             </Button>
                         </Paper>
                     </Grid>
