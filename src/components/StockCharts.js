@@ -37,7 +37,7 @@ ChartJS.register(
   );
 
 const StockCharts = () => {
-    
+
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -82,7 +82,7 @@ const StockCharts = () => {
                 sx={{marginTop: '2.5rem'}}
             >
                 <Box>
-                    {value === 'AAPL' ? 
+                    {value === 'AAPL - Apple' ? 
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={AAPL} />
                             <Box sx={{padding: '.5rem 1rem'}}>
@@ -92,7 +92,7 @@ const StockCharts = () => {
                             </Box>
                         </Box>
                     : undefined}
-                    {value === 'AMZN' ? 
+                    {value === 'AMZN - Amazon' ? 
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={AMZN} />
                             <Box sx={{padding: '.5rem 1rem'}}>
@@ -102,7 +102,7 @@ const StockCharts = () => {
                             </Box>
                         </Box>
                     : undefined}
-                    {value === 'JNJ' ?
+                    {value === 'JNJ - Johnson & Johnson' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={JNJ} />
                             <Box sx={{padding: '.5rem 1rem'}}>
@@ -113,7 +113,7 @@ const StockCharts = () => {
                         </Box> 
                      
                      : undefined}
-                    {value === 'T' ?
+                    {value === 'T - AT&T' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={T} />
                             <Box sx={{padding: '.5rem 1rem'}}>
@@ -123,7 +123,7 @@ const StockCharts = () => {
                             </Box>
                         </Box>
                     : undefined}
-                    {value === 'TSLA' ?
+                    {value === 'TSLA - Tesla' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={TSLA} />
                             <Box sx={{padding: '.5rem 1rem'}}>
@@ -133,7 +133,7 @@ const StockCharts = () => {
                             </Box>
                         </Box>
                     : undefined}
-                    {value === 'MSFT' ?
+                    {value === 'MSFT - Microsoft' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={MSFT} />
                             <Box sx={{padding: '.5rem 1rem'}}>
@@ -143,7 +143,7 @@ const StockCharts = () => {
                             </Box>
                         </Box>
                     : undefined}
-                    {value === 'ZM' ?
+                    {value === 'ZM - Zoom' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={ZM} />
                             <Box sx={{padding: '.5rem 1rem'}}>
@@ -153,7 +153,7 @@ const StockCharts = () => {
                             </Box>
                         </Box>
                     : undefined}
-                    {value === 'SHOP' ?
+                    {value === 'SHOP - Shopify' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={SHOP} />
                             <Box sx={{padding: '.5rem 1rem'}}>

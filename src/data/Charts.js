@@ -250,7 +250,7 @@ export const AAPL = {
     labels,
     datasets: [
         {
-            label: 'AAPL',
+            label: 'AAPL - Apple',
             data: labels.map(() => faker.datatype.number({ min: 131, max: 179 })),
             borderColor: '#318b3a',
             backgroundColor: '#00000000',
@@ -264,7 +264,7 @@ export const AMZN = {
     labels,
     datasets: [
         {
-            label: 'AMZN',
+            label: 'AMZN - Amazon',
             data: labels.map(() => faker.datatype.number({ min: 106, max: 183 })),
             borderColor: '#318b3a',
             backgroundColor: '#00000000',
@@ -278,7 +278,7 @@ export const JNJ = {
     labels,
     datasets: [
         {
-            label: 'JNJ',
+            label: 'JNJ - Johnson & Johnson',
             data: labels.map(() => faker.datatype.number({ min: 160, max: 182 })),
             borderColor: '#318b3a',
             backgroundColor: '#00000000',
@@ -292,7 +292,7 @@ export const T = {
     labels,
     datasets: [
         {
-            label: 'T',
+            label: 'T - AT&T',
             data: labels.map(() => faker.datatype.number({ min: 14, max: 21 })),
             borderColor: '#318b3a',
             backgroundColor: '#00000000',
@@ -306,7 +306,7 @@ export const MSFT = {
     labels,
     datasets: [
         {
-            label: 'MSFT',
+            label: 'MSFT - Microsoft',
             data: labels.map(() => faker.datatype.number({ min: 228, max: 343 })),
             borderColor: '#318b3a',
             backgroundColor: '#00000000',
@@ -320,7 +320,7 @@ export const ZM = {
     labels,
     datasets: [
         {
-            label: 'ZM',
+            label: 'ZM - Zoom',
             data: labels.map(() => faker.datatype.number({ min: 83, max: 264 })),
             borderColor: '#318b3a',
             backgroundColor: '#00000000',
@@ -334,7 +334,7 @@ export const SHOP = {
     labels,
     datasets: [
         {
-            label: 'SHOP',
+            label: 'SHOP - Shopify',
             data: labels.map(() => faker.datatype.number({ min: 29, max: 166 })),
             borderColor: '#318b3a',
             backgroundColor: '#00000000',
@@ -348,7 +348,7 @@ export const TSLA = {
     labels,
     datasets: [
         {
-            label: 'TSLA',
+            label: 'TSLA - Tesla',
             data: labels.map(() => faker.datatype.number({ min: 224, max: 407 })),
             borderColor: '#318b3a',
             backgroundColor: '#00000000',
