@@ -37,6 +37,7 @@ ChartJS.register(
   );
 
 const StockCharts = () => {
+    
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -78,12 +79,13 @@ const StockCharts = () => {
             <Dialog
                 open={open}
                 onClose={handleClose}
+                sx={{marginTop: '2.5rem'}}
             >
                 <Box>
                     {value === 'AAPL' ? 
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={AAPL} />
-                            <Box sx={{padding: '.5rem'}}>
+                            <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
                                 <Button sx={{margin: '.5rem 0'}}>more info</Button>
@@ -93,7 +95,7 @@ const StockCharts = () => {
                     {value === 'AMZN' ? 
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={AMZN} />
-                            <Box sx={{padding: '.5rem'}}>
+                            <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
                                 <Button sx={{margin: '.5rem 0'}}>more info</Button>
@@ -103,7 +105,7 @@ const StockCharts = () => {
                     {value === 'JNJ' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={JNJ} />
-                            <Box sx={{padding: '.5rem'}}>
+                            <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
                                 <Button sx={{margin: '.5rem 0'}}>more info</Button>
@@ -114,7 +116,7 @@ const StockCharts = () => {
                     {value === 'T' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={T} />
-                            <Box sx={{padding: '.5rem'}}>
+                            <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
                                 <Button sx={{margin: '.5rem 0'}}>more info</Button>
@@ -124,7 +126,7 @@ const StockCharts = () => {
                     {value === 'TSLA' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={TSLA} />
-                            <Box sx={{padding: '.5rem'}}>
+                            <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
                                 <Button sx={{margin: '.5rem 0'}}>more info</Button>
@@ -134,7 +136,7 @@ const StockCharts = () => {
                     {value === 'MSFT' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={MSFT} />
-                            <Box sx={{padding: '.5rem'}}>
+                            <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
                                 <Button sx={{margin: '.5rem 0'}}>more info</Button>
@@ -144,7 +146,7 @@ const StockCharts = () => {
                     {value === 'ZM' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={ZM} />
-                            <Box sx={{padding: '.5rem'}}>
+                            <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
                                 <Button sx={{margin: '.5rem 0'}}>more info</Button>
@@ -154,7 +156,7 @@ const StockCharts = () => {
                     {value === 'SHOP' ?
                         <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={SHOP} />
-                            <Box sx={{padding: '.5rem'}}>
+                            <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
                                 <Button sx={{margin: '.5rem 0'}}>more info</Button>
