@@ -60,7 +60,7 @@ const StockCharts = () => {
             <Grid container sx={gridStyle}>
                 {stocks.map((stock) => (
 
-                    <Grid item xs={8} md={3} key={stock}>
+                    <Grid item xs={8} md={3} key={stock} sx={{maxWidth: '90%', flexGrow: 1}}>
                         <Paper elevation="4" sx={{textAlign: 'center'}}>
                             <Line options={options} data={stock} />
                             <Typography sx={chartTitleStyles} noWrap>

@@ -59,7 +59,7 @@ const IndexCharts = () => {
         <Fade cascade damping={0.15}>
             <Grid container sx={gridStyle}>
                 {indexes.map((index) => (
-                    <Grid item xs={8} md={3} key={index}>
+                    <Grid item xs={8} md={3} key={index} sx={{maxWidth: '90%', flexGrow: 1}}>
                         <Paper elevation="4" sx={{textAlign: 'center'}}>
                             <Line options={options} data={index}/>
                             <Typography sx={chartTitleStyles} noWrap>

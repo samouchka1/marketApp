@@ -59,7 +59,7 @@ const FutureCharts = () => {
         <Fade cascade damping={0.15}>
             <Grid container sx={gridStyle}>
                 {futures.map((future) => (
-                    <Grid item xs={8} md={3} key={future}>
+                    <Grid item xs={8} md={3} key={future} sx={{maxWidth: '90%', flexGrow: 1}}>
                         <Paper elevation="4" sx={{textAlign: 'center'}}>
                             <Line options={options} data={future}/>
                             <Typography sx={chartTitleStyles} noWrap>

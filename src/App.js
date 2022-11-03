@@ -16,6 +16,7 @@ import {
 } from '@mui/material';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import IndexCharts from './components/IndexCharts';
 import FutureCharts from './components/FutureCharts';
 import StockCharts from './components/StockCharts';
@@ -36,12 +37,12 @@ const titleAreaStyles = {
 
 const drawerWidth = 240;
 
+          //props
+const App = () => {
 
-const App = (props) => {
 
-
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  // const { window } = props;
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -53,10 +54,16 @@ const App = (props) => {
     <div>
       <Toolbar />
       <Divider />
+      <IconButton onClick={handleDrawerToggle} 
+        sx={{display: {md: 'none', xs: 'block'}, 
+        position: 'relative', left: '82%'}}
+      >
+        <CloseIcon />
+      </IconButton>
       <List>
         {['News', 'Indexes', 'Futures', 'Stocks'].map((text) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={()=> {setSection(text); handleDrawerToggle();} } 
+            <ListItemButton onClick={()=> setSection(text)} 
               className={section === text ? 'Mui-selected' : undefined}
             >
               <ListItemText primary={text} />
@@ -67,7 +74,7 @@ const App = (props) => {
     </div>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  // const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -106,7 +113,7 @@ const App = (props) => {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
       >
         <Drawer
-          container={container}
+          // container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -136,7 +143,8 @@ const App = (props) => {
         sx={{ 
           flexGrow: 1, p: 3, 
           width: { sm: `calc(100% - ${drawerWidth}px)` }, 
-          backgroundColor: '#dadada80'
+          backgroundColor: '#dadada80',
+          // margin: '1rem 0'
         }}
       >
         <Toolbar /> {/* respects header space */}
