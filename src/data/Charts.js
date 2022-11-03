@@ -25,7 +25,7 @@ export const chartTitleStyles = {
     textAlign: 'center',
     fontSize: {
         md: '1rem',
-        xs: '.85rem'
+        xs: '.95rem'
     }
 }
 
