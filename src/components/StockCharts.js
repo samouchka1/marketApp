@@ -68,7 +68,7 @@ const StockCharts = () => {
                             </Typography>
                             <Button onClick={()=> {
                                 handleClickOpen(); 
-                                selectValue(`${stock.datasets[0].label}`)
+                                selectValue(`${stock.datasets[0].label}`) //chart js access label styles
                             }}>
                                 <DehazeIcon fontSize="small" sx={{margin: '.35rem 0'}} />
                             </Button>
@@ -83,7 +83,7 @@ const StockCharts = () => {
             >
                 <Box>
                     {value === 'AAPL - Apple' ? 
-                        <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={AAPL} />
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -93,7 +93,7 @@ const StockCharts = () => {
                         </Box>
                     : undefined}
                     {value === 'AMZN - Amazon' ? 
-                        <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={AMZN} />
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -103,7 +103,7 @@ const StockCharts = () => {
                         </Box>
                     : undefined}
                     {value === 'JNJ - Johnson & Johnson' ?
-                        <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={JNJ} />
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -114,7 +114,7 @@ const StockCharts = () => {
                      
                      : undefined}
                     {value === 'T - AT&T' ?
-                        <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={T} />
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -124,7 +124,7 @@ const StockCharts = () => {
                         </Box>
                     : undefined}
                     {value === 'TSLA - Tesla' ?
-                        <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={TSLA} />
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -134,7 +134,7 @@ const StockCharts = () => {
                         </Box>
                     : undefined}
                     {value === 'MSFT - Microsoft' ?
-                        <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={MSFT} />
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -144,7 +144,7 @@ const StockCharts = () => {
                         </Box>
                     : undefined}
                     {value === 'ZM - Zoom' ?
-                        <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={ZM} />
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -154,7 +154,7 @@ const StockCharts = () => {
                         </Box>
                     : undefined}
                     {value === 'SHOP - Shopify' ?
-                        <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                             <Line options={options} data={SHOP} />
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>

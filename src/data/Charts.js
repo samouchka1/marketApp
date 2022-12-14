@@ -2,6 +2,12 @@ import {faker} from '@faker-js/faker';
 
 export const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
+export const tickers = [
+    'SPX', 'NDX', 'DJX', 'RUT', 'VIX', 'DJU', 'DJT', //index
+    'ES', 'NQ', 'GC', 'SI', 'CL', 'ZC', 'ZW', //futures
+    'AAPL', 'AMZN', 'JNJ', 'T', 'TSLA', 'MSFT', 'ZM', 'SHOP' //stocks
+]
+
 export const options = {
     responsive: true,
     plugins: {

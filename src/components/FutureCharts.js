@@ -67,7 +67,7 @@ const FutureCharts = () => {
                             </Typography>
                             <Button onClick={()=> {
                                 handleClickOpen(); 
-                                selectValue(`${future.datasets[0].label}`)
+                                selectValue(`${future.datasets[0].label}`) //chart js access label styles
                             }}>
                                 <DehazeIcon fontSize="small" sx={{margin: '.35rem 0'}} />
                             </Button>
@@ -82,7 +82,7 @@ const FutureCharts = () => {
                 >
                     <Box>
                         {value === 'ES - S&P500 Futures' ? 
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={ES} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -92,7 +92,7 @@ const FutureCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'NQ - Nasdaq Futures' ? 
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={NQ} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -102,7 +102,7 @@ const FutureCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'GC - Gold Futures' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={GC} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -113,7 +113,7 @@ const FutureCharts = () => {
                         
                         : undefined}
                         {value === 'SI - Silver Futures' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={SI} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -123,7 +123,7 @@ const FutureCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'CL - Crude Oil Futures' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={CL} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -133,7 +133,7 @@ const FutureCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'ZC - Corn Futures' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={ZC} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -143,7 +143,7 @@ const FutureCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'ZW - Wheat Futures' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={ZW} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>

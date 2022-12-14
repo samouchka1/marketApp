@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import { Slide, Fade } from "react-awesome-reveal";
 import {faker} from '@faker-js/faker';
+import { tickers } from '../data/Charts';
 
 const News = () => {
   return (
@@ -15,7 +16,7 @@ const News = () => {
 
         <Slide direction="down" cascade>
             <Fade cascade duration={500} triggerOnce>
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((news) => (
+                {tickers.map((news) => (
                     <Paper key={news} sx={{p: 2, m: '1rem 0'}}>
                         <Link href="#news" sx={{textDecoration: 'none', color: '#3e3e3e'}}>
                             <Box sx={{display: 'flex', alignItems: 'center'}}>
@@ -24,6 +25,9 @@ const News = () => {
                                 </Typography>
                                 <Typography sx={{fontSize: {md: '19px', xs: '17px'}, m: '1rem', fontWeight: '600'}}>
                                     {faker.lorem.lines(1)}
+                                </Typography>
+                                <Typography sx={{color: 'success.main',}}>
+                                    ${[news]}
                                 </Typography>
                             </Box>
                             <Typography variant="body2">

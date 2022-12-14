@@ -67,7 +67,7 @@ const IndexCharts = () => {
                             </Typography>
                             <Button onClick={()=> {
                                 handleClickOpen(); 
-                                selectValue(`${index.datasets[0].label}`)
+                                selectValue(`${index.datasets[0].label}`) //chart js access label styles
                             }}>
                                 <DehazeIcon fontSize="small" sx={{margin: '.35rem 0'}} />
                             </Button>
@@ -82,7 +82,7 @@ const IndexCharts = () => {
                 >
                     <Box>
                         {value === 'SPX - S&P500 Index' ? 
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={SPX} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -92,7 +92,7 @@ const IndexCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'NDX - Nasdaq Index' ? 
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={NDX} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -102,7 +102,7 @@ const IndexCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'DJX - Dow Jones Index' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={DJX} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -113,7 +113,7 @@ const IndexCharts = () => {
                         
                         : undefined}
                         {value === 'RUT - Russell 2000 Index' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={RUT} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -123,7 +123,7 @@ const IndexCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'VIX - S&P500 Volatility Index' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={VIX} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -133,7 +133,7 @@ const IndexCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'DJU - Dow Jones Utilities Index' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={DJU} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
@@ -143,7 +143,7 @@ const IndexCharts = () => {
                             </Box>
                         : undefined}
                         {value === 'DJT - Dow Jones Transports Index' ?
-                            <Box sx={{height: '80vh', width: 'auto', textAlign: 'center'}}>
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Line options={options} data={DJT} />
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
