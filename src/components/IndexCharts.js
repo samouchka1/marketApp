@@ -21,7 +21,13 @@ import {
     Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { options, gridStyle, chartTitleStyles } from '../data/Charts';
+import { 
+    options, 
+    gridStyle, 
+    chartTitleStyles, 
+    chartButtonStyles,
+    dialogButtonStyles 
+} from '../data/Charts';
 import { SPX, NDX, DJX, RUT, VIX, DJU, DJT } from '../data/Charts';
 
 const indexes = [ SPX, NDX, DJX, RUT, VIX, DJU, DJT ];
@@ -65,11 +71,12 @@ const IndexCharts = () => {
                             <Typography sx={chartTitleStyles} noWrap>
                                 {index.datasets[0].label}    
                             </Typography>
-                            <Button onClick={()=> {
+                            <Button 
+                                onClick={()=> {
                                 handleClickOpen(); 
                                 selectValue(`${index.datasets[0].label}`) //chart js access label styles
                             }}>
-                                <DehazeIcon fontSize="small" sx={{margin: '.35rem 0'}} />
+                                <DehazeIcon fontSize="small" sx={chartButtonStyles} />
                             </Button>
                         </Paper>
                     </Grid>
@@ -87,7 +94,7 @@ const IndexCharts = () => {
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                     <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                    <Button sx={dialogButtonStyles}>more info</Button>
                                 </Box>
                             </Box>
                         : undefined}
@@ -97,7 +104,7 @@ const IndexCharts = () => {
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                     <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                    <Button sx={dialogButtonStyles}>more info</Button>
                                 </Box>
                             </Box>
                         : undefined}
@@ -107,7 +114,7 @@ const IndexCharts = () => {
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                     <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                    <Button sx={dialogButtonStyles}>more info</Button>
                                 </Box>
                             </Box> 
                         
@@ -118,7 +125,7 @@ const IndexCharts = () => {
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                     <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                    <Button sx={dialogButtonStyles}>more info</Button>
                                 </Box>
                             </Box>
                         : undefined}
@@ -128,7 +135,7 @@ const IndexCharts = () => {
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                     <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                    <Button sx={dialogButtonStyles}>more info</Button>
                                 </Box>
                             </Box>
                         : undefined}
@@ -138,7 +145,7 @@ const IndexCharts = () => {
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                     <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                    <Button sx={dialogButtonStyles}>more info</Button>
                                 </Box>
                             </Box>
                         : undefined}
@@ -148,7 +155,7 @@ const IndexCharts = () => {
                                 <Box sx={{padding: '.5rem 1rem'}}>
                                     <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                     <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                    <Button sx={dialogButtonStyles}>more info</Button>
                                 </Box>
                             </Box>
                         : undefined}

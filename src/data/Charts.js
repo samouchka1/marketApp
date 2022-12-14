@@ -32,7 +32,18 @@ export const chartTitleStyles = {
     fontSize: {
         md: '1rem',
         xs: '.95rem'
-    }
+    },
+    color: 'text.primary'
+}
+
+export const chartButtonStyles = {
+    color: 'text.secondary',
+    margin: '.35rem 0'
+}
+
+export const dialogButtonStyles = {
+    color: 'text.primary',
+    margin: '.5rem 0'
 }
 
 

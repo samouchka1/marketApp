@@ -21,7 +21,13 @@ import {
     Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { options, gridStyle, chartTitleStyles } from '../data/Charts';
+import { 
+    options, 
+    gridStyle, 
+    chartTitleStyles, 
+    chartButtonStyles,
+    dialogButtonStyles 
+} from '../data/Charts';
 import { AAPL, AMZN, JNJ, T, TSLA, MSFT, ZM, SHOP } from '../data/Charts';
 
 const stocks = [AAPL, AMZN, JNJ, T, TSLA, MSFT, ZM, SHOP];
@@ -70,7 +76,7 @@ const StockCharts = () => {
                                 handleClickOpen(); 
                                 selectValue(`${stock.datasets[0].label}`) //chart js access label styles
                             }}>
-                                <DehazeIcon fontSize="small" sx={{margin: '.35rem 0'}} />
+                                <DehazeIcon fontSize="small" sx={chartButtonStyles} />
                             </Button>
                         </Paper>
                     </Grid>
@@ -88,7 +94,7 @@ const StockCharts = () => {
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                <Button sx={dialogButtonStyles}>more info</Button>
                             </Box>
                         </Box>
                     : undefined}
@@ -98,7 +104,7 @@ const StockCharts = () => {
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                <Button sx={dialogButtonStyles}>more info</Button>
                             </Box>
                         </Box>
                     : undefined}
@@ -108,7 +114,7 @@ const StockCharts = () => {
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                <Button sx={dialogButtonStyles}>more info</Button>
                             </Box>
                         </Box> 
                      
@@ -119,7 +125,7 @@ const StockCharts = () => {
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                <Button sx={dialogButtonStyles}>more info</Button>
                             </Box>
                         </Box>
                     : undefined}
@@ -129,7 +135,7 @@ const StockCharts = () => {
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                <Button sx={dialogButtonStyles}>more info</Button>
                             </Box>
                         </Box>
                     : undefined}
@@ -139,7 +145,7 @@ const StockCharts = () => {
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                <Button sx={dialogButtonStyles}>more info</Button>
                             </Box>
                         </Box>
                     : undefined}
@@ -149,7 +155,7 @@ const StockCharts = () => {
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                <Button sx={dialogButtonStyles}>more info</Button>
                             </Box>
                         </Box>
                     : undefined}
@@ -159,7 +165,7 @@ const StockCharts = () => {
                             <Box sx={{padding: '.5rem 1rem'}}>
                                 <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
                                 <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={{margin: '.5rem 0'}}>more info</Button>
+                                <Button sx={dialogButtonStyles}>more info</Button>
                             </Box>
                         </Box> 
                     : undefined}

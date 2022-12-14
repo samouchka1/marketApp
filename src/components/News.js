@@ -11,11 +11,16 @@ import {faker} from '@faker-js/faker';
 import { tickers } from '../data/Charts';
 
 const News = () => {
+
+    // let randomTickers = tickers.sort(() => Math.random() - 0.5);
+    //this makes elements appear random instead of cascade; unintended effect
+
   return (
     <Container maxWidth={false}>
 
-        <Slide direction="down" cascade>
+        <Slide direction="down" cascade triggerOnce>
             <Fade cascade duration={500} triggerOnce>
+                {/* {randomTickers.map((news) => ( */}
                 {tickers.map((news) => (
                     <Paper key={news} sx={{p: 2, m: '1rem 0'}}>
                         <Link href="#news" sx={{textDecoration: 'none', color: '#3e3e3e'}}>
