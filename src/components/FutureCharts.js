@@ -26,7 +26,8 @@ import {
     gridStyle, 
     chartTitleStyles, 
     chartButtonStyles,
-    dialogButtonStyles 
+    dialogButtonStyles, 
+    chartItemStyles
 } from '../data/Charts';
 import { ES, NQ, GC, SI, CL, ZC, ZW } from '../data/Charts';
 
@@ -66,7 +67,10 @@ const FutureCharts = () => {
             <Grid container sx={gridStyle}>
                 {futures.map((future) => (
                     <Grid item xs={8} md={3} key={future} sx={{maxWidth: '90%', flexGrow: 1}}>
-                        <Paper elevation="4" sx={{textAlign: 'center'}}>
+                        <Paper 
+                            elevation="4" 
+                            sx={chartItemStyles}
+                        >
                             <Line options={options} data={future}/>
                             <Typography sx={chartTitleStyles} noWrap>
                                 {future.datasets[0].label}    

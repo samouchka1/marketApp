@@ -26,7 +26,8 @@ import {
     gridStyle, 
     chartTitleStyles, 
     chartButtonStyles,
-    dialogButtonStyles 
+    dialogButtonStyles,
+    chartItemStyles 
 } from '../data/Charts';
 import { SPX, NDX, DJX, RUT, VIX, DJU, DJT } from '../data/Charts';
 
@@ -66,7 +67,10 @@ const IndexCharts = () => {
             <Grid container sx={gridStyle}>
                 {indexes.map((index) => (
                     <Grid item xs={8} md={3} key={index} sx={{maxWidth: '90%', flexGrow: 1}}>
-                        <Paper elevation="4" sx={{textAlign: 'center'}}>
+                        <Paper 
+                            elevation="4" 
+                            sx={chartItemStyles} 
+                        >
                             <Line options={options} data={index}/>
                             <Typography sx={chartTitleStyles} noWrap>
                                 {index.datasets[0].label}    

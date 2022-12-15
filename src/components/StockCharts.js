@@ -26,7 +26,8 @@ import {
     gridStyle, 
     chartTitleStyles, 
     chartButtonStyles,
-    dialogButtonStyles 
+    dialogButtonStyles,
+    chartItemStyles 
 } from '../data/Charts';
 import { AAPL, AMZN, JNJ, T, TSLA, MSFT, ZM, SHOP } from '../data/Charts';
 
@@ -67,7 +68,10 @@ const StockCharts = () => {
                 {stocks.map((stock) => (
 
                     <Grid item xs={8} md={3} key={stock} sx={{maxWidth: '90%', flexGrow: 1}}>
-                        <Paper elevation="4" sx={{textAlign: 'center'}}>
+                        <Paper 
+                            elevation="4" 
+                            sx={chartItemStyles}
+                        >
                             <Line options={options} data={stock} />
                             <Typography sx={chartTitleStyles} noWrap>
                                 {stock.datasets[0].label}    

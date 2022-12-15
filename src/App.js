@@ -66,7 +66,7 @@ const App = () => {
                 <ListItemButton 
                   className={section === text ? 'Mui-selected' : undefined}
                   onClick={()=> {
-                    setMobileOpen(!mobileOpen); 
+                    setMobileOpen(false); 
                     setSection(text)
                   }} 
                 >

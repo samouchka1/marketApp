@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { Slide, Fade } from "react-awesome-reveal";
 import {faker} from '@faker-js/faker';
-import { tickers } from '../data/Charts';
+import { tickers, newsItemStyles } from '../data/Charts';
 
 const News = () => {
 
@@ -22,7 +22,7 @@ const News = () => {
             <Fade cascade duration={500} triggerOnce>
                 {/* {randomTickers.map((news) => ( */}
                 {tickers.map((news) => (
-                    <Paper key={news} sx={{p: 2, m: '1rem 0'}}>
+                    <Paper key={news} sx={newsItemStyles}>
                         <Link href="#news" sx={{textDecoration: 'none', color: '#3e3e3e'}}>
                             <Box sx={{display: 'flex', alignItems: 'center'}}>
                                 <Typography variant="subtitle2">
