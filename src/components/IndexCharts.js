@@ -7,7 +7,10 @@ import {
     Button,
     Dialog
 } from '@mui/material';
-import { Fade } from "react-awesome-reveal";
+import { 
+    Fade, 
+    // Slide 
+} from "react-awesome-reveal";
 import {faker} from '@faker-js/faker';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import {
@@ -43,7 +46,7 @@ ChartJS.register(
     Legend
   );
 
-const IndexCharts = () => {
+const IndexCharts = ({BannerTop}) => {
 
     const [open, setOpen] = useState(false);
 
@@ -63,6 +66,9 @@ const IndexCharts = () => {
 
   return (
     <Box>
+
+        <BannerTop />
+
         <Fade cascade damping={0.15}>
             <Grid container sx={gridStyle}>
                 {indexes.map((index) => (

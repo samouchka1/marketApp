@@ -43,7 +43,7 @@ ChartJS.register(
     Legend
   );
 
-const StockCharts = () => {
+const StockCharts = ({BannerTop}) => {
 
     const [open, setOpen] = useState(false);
 
@@ -63,6 +63,9 @@ const StockCharts = () => {
 
   return (
     <Box>
+
+        <BannerTop />
+
         <Fade cascade damping={0.15}>
             <Grid container sx={gridStyle}>
                 {stocks.map((stock) => (

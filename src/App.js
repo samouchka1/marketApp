@@ -15,15 +15,17 @@ import {
     Typography,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
+// import ShowChartIcon from '@mui/icons-material/ShowChart';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import IndexCharts from './components/IndexCharts';
 import FutureCharts from './components/FutureCharts';
 import StockCharts from './components/StockCharts';
 import Welcome from './components/Welcome';
-import News from './components/News'
+import News from './components/News';
+import { Slide } from "react-awesome-reveal";
 import './App.css';
+import 'animate.css';
 
 const drawerWidth = 240;
 
@@ -46,6 +48,13 @@ const App = () => {
   };
 
   const [section, setSection] = useState('');
+
+  React.useEffect(() => {
+    document.querySelector(".title").classList.remove("animate__flash")
+    setTimeout(() => {
+      document.querySelector(".title").classList.add("animate__flash")
+    }, 5);
+  }, [section])
 
     const DrawerContent = () => {
 
@@ -78,6 +87,35 @@ const App = () => {
         </Box>
       )
   }
+
+  const BannerTop = () => {
+
+    return (
+      <Box sx={{margin:'-.6rem 0 1.3rem'}}>
+        <Slide direction="down">
+            <Box  sx={{
+                backgroundColor: 'grey.800', 
+                padding: '1rem', 
+                borderRadius: '4px',
+              }}>
+                <Typography 
+                  sx={{
+                    textAlign: 'center', 
+                    fontSize: '1.5rem', 
+                    color:'common.white',
+                    fontFamily: 'Teko',
+                    letterSpacing: 2
+                  }}>
+                    {section === 'News' ? 'News' : ''}
+                    {section === 'Indexes' ? 'Index Charts' : ''}
+                    {section === 'Futures' ? 'Futures Charts' : ''}
+                    {section === 'Stocks' ? 'Stock Charts' : ''}
+                </Typography>
+            </Box>
+        </Slide>
+      </Box>
+    )
+  }
     
 
   // const container = window !== undefined ? () => window().document.body : undefined;
@@ -91,7 +129,8 @@ const App = () => {
           sx={{
             width: { sm: `calc(100% - ${drawerWidth}px)` },
             ml: { sm: `${drawerWidth}px` },
-            backgroundColor: '#3e3e3e' //<<<<  bgcolor
+            backgroundColor: 'grey.900', //<<<<  bgcolor
+            zIndex: 999
           }}
         >
           <Toolbar>
@@ -111,7 +150,7 @@ const App = () => {
               sx={{
                 display: 'flex', 
                 alignItems: 'center', 
-                backgroundColor: '#505050', 
+                backgroundColor: 'grey.800', 
                 padding: '.5rem 1rem',
                 margin: {
                   md: '0',
@@ -119,9 +158,26 @@ const App = () => {
                 }
               }}
             > 
-              <Button onClick={() => setSection('')}>   
-                <ShowChartIcon fonSize="large" sx={{padding: '0 1rem 0 0', color: '#2fb12f'}}/>
-                <Typography variant="h6" noWrap component="div" color="common.white">
+              <Button onClick={() => setSection('')}> 
+                <Box
+                  component="img"
+                  src={process.env.PUBLIC_URL + 'home-icon.png'}
+                  sx={{ padding: '0 1rem 0 0', height: '32px' }}
+                  className="animate__animated title" 
+                />  
+                {/* <ShowChartIcon 
+                  fonSize="large" 
+                  sx={{padding: '0 1rem 0 0', color: '#2fb12f'}}
+                  className="animate__animated title"   
+                /> */}
+                <Typography 
+                  sx={{
+                    fontSize: '1.5rem',
+                    fontFamily: 'Teko',
+                    letterSpacing: 2,
+                    color: "common.white" 
+                  }}
+                >
                   Market App
                 </Typography>
               </Button>  
@@ -134,10 +190,12 @@ const App = () => {
               {/* NAVIGATION */}
         <Box
           component="nav"
-          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+          sx={{ 
+            width: { sm: drawerWidth }, 
+            flexShrink: { sm: 0 }, 
+          }}
         >
           <Drawer
-            // container={container}
             variant="temporary"
             open={mobileOpen}
             onClose={handleDrawerToggle}
@@ -149,7 +207,7 @@ const App = () => {
               '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
             }}
           >
-            <DrawerContent />   {/*DRAWER CONTENT */}
+            <DrawerContent />   {/*DRAWER CONTENT  modile */}
           </Drawer>
 
 
@@ -161,7 +219,7 @@ const App = () => {
               '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
             }}
           >
-            <DrawerContent />   {/*DRAWER CONTENT */}
+            <DrawerContent />   {/*DRAWER CONTENT desktop */}
           </Drawer>
 
         </Box>
@@ -172,17 +230,17 @@ const App = () => {
           sx={{ 
             flexGrow: 1, p: 3, 
             width: { sm: `calc(100% - ${drawerWidth}px)` }, 
-            backgroundColor: '#dadada80',
+            backgroundColor: 'grey.100',
             // margin: '1rem 0'
           }}
         >
           <Toolbar /> {/* header space */}
 
             {section === '' ? <Welcome /> : undefined }
-            {section === 'News' ? <News /> : undefined }
-            {section === 'Indexes' ? <IndexCharts /> : undefined }
-            {section === 'Futures' ? <FutureCharts /> : undefined }
-            {section === 'Stocks' ? <StockCharts /> : undefined }
+            {section === 'News' ? <News BannerTop={BannerTop} /> : undefined }
+            {section === 'Indexes' ? <IndexCharts BannerTop={BannerTop} /> : undefined }
+            {section === 'Futures' ? <FutureCharts BannerTop={BannerTop} /> : undefined }
+            {section === 'Stocks' ? <StockCharts BannerTop={BannerTop} /> : undefined }
             
         </Box>
 

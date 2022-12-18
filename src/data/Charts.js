@@ -49,22 +49,6 @@ export const chartItemStyles = {
     }
 }
 
-export const newsItemStyles = {
-    padding: 2, 
-    margin: '1rem 0',
-    opacity: '.92',
-    '&:hover': {
-        opacity: '1',
-        animationName: 'zoom',
-        animationDuration: '.20s',
-        animationFillMode: 'forwards',
-        '@keyframes zoom' : {
-            '0%': { transform: 'scale(1.0)'},
-            '100%' : { transform: 'scale(1.006)'}
-        }
-    }
-}
-
 export const chartButtonStyles = {
     color: 'text.secondary',
     margin: '.35rem 0'
