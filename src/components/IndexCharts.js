@@ -30,11 +30,10 @@ import {
     chartTitleStyles, 
     chartButtonStyles,
     dialogButtonStyles,
-    chartItemStyles 
+    dialogInfoStyles,
+    chartItemStyles,
+    IndexData   //INDEX DATA
 } from '../data/Charts';
-import { SPX, NDX, DJX, RUT, VIX, DJU, DJT } from '../data/Charts';
-
-const indexes = [ SPX, NDX, DJX, RUT, VIX, DJU, DJT ];
 
 ChartJS.register(
     CategoryScale,
@@ -71,20 +70,20 @@ const IndexCharts = ({BannerTop}) => {
 
         <Fade cascade damping={0.15}>
             <Grid container sx={gridStyle}>
-                {indexes.map((index) => (
+                {IndexData.map((index) => (
                     <Grid item xs={8} md={3} key={index} sx={{maxWidth: '90%', flexGrow: 1}}>
                         <Paper 
                             elevation="4" 
                             sx={chartItemStyles} 
                         >
-                            <Line options={options} data={index}/>
+                            <Line options={options} data={index.data}/>
                             <Typography sx={chartTitleStyles} noWrap>
-                                {index.datasets[0].label}    
+                                {index.name}
                             </Typography>
                             <Button 
                                 onClick={()=> {
                                 handleClickOpen(); 
-                                selectValue(`${index.datasets[0].label}`) //chart js access label styles
+                                selectValue(`${index.name}`) //chart js access label styles
                             }}>
                                 <DehazeIcon fontSize="small" sx={chartButtonStyles} />
                             </Button>
@@ -98,77 +97,23 @@ const IndexCharts = ({BannerTop}) => {
                     sx={{marginTop: '2.5rem'}}
                 >
                     <Box>
-                        {value === 'SPX - S&P500 Index' ? 
-                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                                <Line options={options} data={SPX} />
-                                <Box sx={{padding: '.5rem 1rem'}}>
-                                    <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                    <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={dialogButtonStyles}>more info</Button>
+                        {IndexData.map((index) => (
+                            value === index.name ? 
+                                <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
+                                    <Line options={options} data={index.data} />
+                                    <Box sx={{padding: '.5rem 1rem'}}>
+                                        <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
+                                        <Paper sx={dialogInfoStyles}>
+                                            <Typography>52-week high: {index.high}</Typography>
+                                            <Typography>52-week low: {index.low}</Typography>
+                                            <Typography>Implied Volatility: {index.iv}%</Typography>
+                                        </Paper>
+                                        <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(5)}</Typography>
+                                        <Button sx={dialogButtonStyles}>more info</Button>
+                                    </Box>
                                 </Box>
-                            </Box>
-                        : undefined}
-                        {value === 'NDX - Nasdaq Index' ? 
-                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                                <Line options={options} data={NDX} />
-                                <Box sx={{padding: '.5rem 1rem'}}>
-                                    <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                    <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={dialogButtonStyles}>more info</Button>
-                                </Box>
-                            </Box>
-                        : undefined}
-                        {value === 'DJX - Dow Jones Index' ?
-                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                                <Line options={options} data={DJX} />
-                                <Box sx={{padding: '.5rem 1rem'}}>
-                                    <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                    <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={dialogButtonStyles}>more info</Button>
-                                </Box>
-                            </Box> 
-                        
-                        : undefined}
-                        {value === 'RUT - Russell 2000 Index' ?
-                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                                <Line options={options} data={RUT} />
-                                <Box sx={{padding: '.5rem 1rem'}}>
-                                    <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                    <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={dialogButtonStyles}>more info</Button>
-                                </Box>
-                            </Box>
-                        : undefined}
-                        {value === 'VIX - S&P500 Volatility Index' ?
-                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                                <Line options={options} data={VIX} />
-                                <Box sx={{padding: '.5rem 1rem'}}>
-                                    <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                    <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={dialogButtonStyles}>more info</Button>
-                                </Box>
-                            </Box>
-                        : undefined}
-                        {value === 'DJU - Dow Jones Utilities Index' ?
-                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                                <Line options={options} data={DJU} />
-                                <Box sx={{padding: '.5rem 1rem'}}>
-                                    <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                    <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={dialogButtonStyles}>more info</Button>
-                                </Box>
-                            </Box>
-                        : undefined}
-                        {value === 'DJT - Dow Jones Transports Index' ?
-                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                                <Line options={options} data={DJT} />
-                                <Box sx={{padding: '.5rem 1rem'}}>
-                                    <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                    <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                    <Button sx={dialogButtonStyles}>more info</Button>
-                                </Box>
-                            </Box>
-                        : undefined}
+                            : undefined
+                        ))}
                     </Box>
                 </Dialog>
             </Grid>

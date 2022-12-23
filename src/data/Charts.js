@@ -22,6 +22,9 @@ export const options = {
     },
 };
 
+
+// === STYLES ===
+
 export const gridStyle = {
     justifyContent: 'center',
     gap: '1.5rem'
@@ -29,6 +32,7 @@ export const gridStyle = {
 
 export const chartTitleStyles = { 
     textAlign: 'center',
+    // fontFamily: '',
     fontSize: {
         md: '1rem',
         xs: '.95rem'
@@ -54,11 +58,22 @@ export const chartButtonStyles = {
     margin: '.35rem 0'
 }
 
+export const dialogInfoStyles = {
+    display: 'flex', 
+    flexDirection: 'column',
+    justifyContent: {
+        md: 'space-between',
+        xs: 'center',
+    }, 
+    gap: '.5rem',
+    margin: '1rem 0', 
+    padding: '1rem',
+}
+
 export const dialogButtonStyles = {
     color: 'text.primary',
     margin: '.5rem 0'
 }
-
 
 
 //INDEXES
@@ -162,6 +177,7 @@ export const DJT = {
     ],
 };
 
+
 //FUTURES
 
 export const ES = {
@@ -260,6 +276,7 @@ export const ZW = {
         },
     ],
 };
+
 
 //STOCKS
 
@@ -387,3 +404,164 @@ export const TSLA = {
         },
     ],
 };
+
+
+// ====== DATA ======
+
+//INDEX
+export const IndexData = [
+    {
+        name: 'SPX - S&P500 Index',
+        data: SPX,
+        high: 4800, 
+        low: 3500,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'NDX - Nasdaq Index',
+        data: NDX,
+        high: 16700, 
+        low: 14400,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'DJX - Dow Jones Index',
+        data: DJX,
+        high: 36000, 
+        low: 29000,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'RUT - Russell 2000 Index',
+        data: RUT,
+        high: 2400, 
+        low: 1600,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'VIX - S&P500 Volatility Index',
+        data: VIX,
+        high: 39, 
+        low: 14,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'DJU - Dow Jones Utilities Index',
+        data: DJU,
+        high: 1060, 
+        low: 860,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'DJT - Dow Jones Transports Index',
+        data: DJT,
+        high: 16800, 
+        low: 12600,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    }
+]
+
+//FUTURES
+export const FuturesData = [
+    {
+        name: 'ES - S&P500 Futures',
+        data: ES,
+        high: 4800, 
+        low: 3500,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'NQ - Nasdaq Futures',
+        data: NQ,
+        high: 16800, 
+        low: 12600,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'GC - Gold Futures',
+        data: GC,
+        high: 2000, 
+        low: 1600,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'SI - Silver Futures',
+        data: SI,
+        high: 27, 
+        low: 17,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'CL - Crude Oil Futures',
+        data: CL,
+        high: 110, 
+        low: 60,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'ZC - Corn Futures',
+        data: ZC,
+        high: 766, 
+        low: 531,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'ZW - Wheat Futures',
+        data: ZW,
+        high: 1282, 
+        low: 766,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+]
+
+export const StocksData = [
+    {
+        name: 'AAPL - Apple',
+        data: AAPL,
+        high: 179,
+        low: 131,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'AMZN - Amazon',
+        data: AMZN,
+        high: 183,
+        low: 106,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'JNJ - Johnson & Johnson',
+        data: JNJ,
+        high: 182,
+        low: 160,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'T - AT&T',
+        data: T,
+        high: 21,
+        low: 14,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'ZM - Zoom',
+        data: ZM,
+        high: 264,
+        low: 83,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'SHOP - Shopify',
+        data: SHOP,
+        high: 166,
+        low: 29,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+    {
+        name: 'TSLA - Tesla',
+        data: TSLA,
+        high: 407,
+        low: 224,
+        iv: faker.datatype.float({ min: 5, max: 45, precision: 0.01 })
+    },
+]

@@ -27,11 +27,10 @@ import {
     chartTitleStyles, 
     chartButtonStyles,
     dialogButtonStyles,
-    chartItemStyles 
+    dialogInfoStyles,
+    chartItemStyles,
+    StocksData 
 } from '../data/Charts';
-import { AAPL, AMZN, JNJ, T, TSLA, MSFT, ZM, SHOP } from '../data/Charts';
-
-const stocks = [AAPL, AMZN, JNJ, T, TSLA, MSFT, ZM, SHOP];
 
 ChartJS.register(
     CategoryScale,
@@ -64,30 +63,30 @@ const StockCharts = ({BannerTop}) => {
   return (
     <Box>
 
-        <BannerTop />
+    <BannerTop />
 
-        <Fade cascade damping={0.15}>
-            <Grid container sx={gridStyle}>
-                {stocks.map((stock) => (
-
-                    <Grid item xs={8} md={3} key={stock} sx={{maxWidth: '90%', flexGrow: 1}}>
-                        <Paper 
-                            elevation="4" 
-                            sx={chartItemStyles}
-                        >
-                            <Line options={options} data={stock} />
-                            <Typography sx={chartTitleStyles} noWrap>
-                                {stock.datasets[0].label}    
-                            </Typography>
-                            <Button onClick={()=> {
-                                handleClickOpen(); 
-                                selectValue(`${stock.datasets[0].label}`) //chart js access label styles
-                            }}>
-                                <DehazeIcon fontSize="small" sx={chartButtonStyles} />
-                            </Button>
-                        </Paper>
-                    </Grid>
-                ))}
+    <Fade cascade damping={0.15}>
+        <Grid container sx={gridStyle}>
+            {StocksData.map((index) => (
+                <Grid item xs={8} md={3} key={index} sx={{maxWidth: '90%', flexGrow: 1}}>
+                    <Paper 
+                        elevation="4" 
+                        sx={chartItemStyles} 
+                    >
+                        <Line options={options} data={index.data}/>
+                        <Typography sx={chartTitleStyles} noWrap>
+                            {index.name}
+                        </Typography>
+                        <Button 
+                            onClick={()=> {
+                            handleClickOpen(); 
+                            selectValue(`${index.name}`) //chart js access label styles
+                        }}>
+                            <DehazeIcon fontSize="small" sx={chartButtonStyles} />
+                        </Button>
+                    </Paper>
+                </Grid>
+            ))}
 
             <Dialog
                 open={open}
@@ -95,92 +94,27 @@ const StockCharts = ({BannerTop}) => {
                 sx={{marginTop: '2.5rem'}}
             >
                 <Box>
-                    {value === 'AAPL - Apple' ? 
-                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                            <Line options={options} data={AAPL} />
-                            <Box sx={{padding: '.5rem 1rem'}}>
-                                <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={dialogButtonStyles}>more info</Button>
+                    {StocksData.map((index) => (
+                        value === index.name ? 
+                            <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
+                                <Line options={options} data={index.data} />
+                                <Box sx={{padding: '.5rem 1rem'}}>
+                                    <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
+                                    <Paper sx={dialogInfoStyles}>
+                                        <Typography>52-week high: {index.high}</Typography>
+                                        <Typography>52-week low: {index.low}</Typography>
+                                        <Typography>Implied Volatility: {index.iv}%</Typography>
+                                    </Paper>
+                                    <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(5)}</Typography>
+                                    <Button sx={dialogButtonStyles}>more info</Button>
+                                </Box>
                             </Box>
-                        </Box>
-                    : undefined}
-                    {value === 'AMZN - Amazon' ? 
-                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                            <Line options={options} data={AMZN} />
-                            <Box sx={{padding: '.5rem 1rem'}}>
-                                <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={dialogButtonStyles}>more info</Button>
-                            </Box>
-                        </Box>
-                    : undefined}
-                    {value === 'JNJ - Johnson & Johnson' ?
-                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                            <Line options={options} data={JNJ} />
-                            <Box sx={{padding: '.5rem 1rem'}}>
-                                <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={dialogButtonStyles}>more info</Button>
-                            </Box>
-                        </Box> 
-                     
-                     : undefined}
-                    {value === 'T - AT&T' ?
-                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                            <Line options={options} data={T} />
-                            <Box sx={{padding: '.5rem 1rem'}}>
-                                <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={dialogButtonStyles}>more info</Button>
-                            </Box>
-                        </Box>
-                    : undefined}
-                    {value === 'TSLA - Tesla' ?
-                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                            <Line options={options} data={TSLA} />
-                            <Box sx={{padding: '.5rem 1rem'}}>
-                                <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={dialogButtonStyles}>more info</Button>
-                            </Box>
-                        </Box>
-                    : undefined}
-                    {value === 'MSFT - Microsoft' ?
-                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                            <Line options={options} data={MSFT} />
-                            <Box sx={{padding: '.5rem 1rem'}}>
-                                <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={dialogButtonStyles}>more info</Button>
-                            </Box>
-                        </Box>
-                    : undefined}
-                    {value === 'ZM - Zoom' ?
-                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                            <Line options={options} data={ZM} />
-                            <Box sx={{padding: '.5rem 1rem'}}>
-                                <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={dialogButtonStyles}>more info</Button>
-                            </Box>
-                        </Box>
-                    : undefined}
-                    {value === 'SHOP - Shopify' ?
-                        <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
-                            <Line options={options} data={SHOP} />
-                            <Box sx={{padding: '.5rem 1rem'}}>
-                                <Typography sx={{margin: '1rem 0'}}>{value}</Typography>
-                                <Typography sx={{textAlign: 'left'}}>{faker.lorem.paragraph(6)}</Typography>
-                                <Button sx={dialogButtonStyles}>more info</Button>
-                            </Box>
-                        </Box> 
-                    : undefined}
+                        : undefined
+                    ))}
                 </Box>
             </Dialog>
-
-            </Grid>
-        </Fade>
+        </Grid>
+    </Fade>
     </Box>
   )
 }
