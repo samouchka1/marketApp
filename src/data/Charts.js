@@ -3,6 +3,12 @@ import {faker} from '@faker-js/faker';
 export const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
 export const tickers = [
+
+    // {
+    //     ticker: 'SPX',
+    //     date: faker.date.recent(2)
+    // }
+
     'SPX', 'NDX', 'DJX', 'RUT', 'VIX', 'DJU', 'DJT', //index
     'ES', 'NQ', 'GC', 'SI', 'CL', 'ZC', 'ZW', //futures
     'AAPL', 'AMZN', 'JNJ', 'T', 'TSLA', 'MSFT', 'ZM', 'SHOP' //stocks
@@ -49,7 +55,8 @@ export const chartItemStyles = {
         '@keyframes zoom' : {
             '0%': { transform: 'scale(1.0)'},
             '100%' : { transform: 'scale(1.014)'}
-        }
+        },
+        boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)'
     }
 }
 
