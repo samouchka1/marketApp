@@ -17,13 +17,6 @@ const newsItemStyles = {
     opacity: '.92',
     '&:hover': {
         opacity: '1',
-        // animationName: 'zoom',
-        // animationDuration: '.20s',
-        // animationFillMode: 'forwards',
-        // '@keyframes zoom' : {
-        //     '0%': { transform: 'scale(1.0)'},
-        //     '100%' : { transform: 'scale(1.006)'}
-        // }
         boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)'
     }
 }

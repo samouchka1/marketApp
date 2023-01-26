@@ -40,7 +40,11 @@ const watchListItemStyles = {
   display: 'flex',
   justifyContent: 'space-between',
   p: '.55rem',
-  gap: '1rem'
+  gap: '1rem',
+  '&:hover': {
+    opacity: '1',
+    boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)'
+  }
 }
 
 const eventsAreaStyles = {
@@ -77,7 +81,17 @@ const Welcome = () => {
 
               <Box sx={{textAlign: 'center'}}>
                 <Typography variant="h6" sx={{m: '.8rem 0'}}>Portfolio</Typography>
-                <Paper sx={{width: {md: '20rem', xs: '14rem'}, p: '.5rem', m:'auto'}}>
+                <Paper 
+                  sx={{
+                    width: {md: '20rem', xs: '14rem'}, 
+                    p: '.5rem', 
+                    m:'auto',
+                    '&:hover': {
+                      opacity: '1',
+                      boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)'
+                    }
+                  }}
+                >
                   <Pie data={data} />
                 </Paper>
               </Box>
@@ -85,7 +99,16 @@ const Welcome = () => {
                 
               <Box>
                 <Typography variant="h6" sx={{textAlign: 'center', m: '.8rem 0'}}>Upcoming Events</Typography>
-                <Paper sx={{display: 'flex', flexDirection: 'column', gap: '.5rem'}}>
+                <Paper 
+                  sx={{
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    gap: '.5rem',
+                    '&:hover': {
+                      opacity: '1',
+                      boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)'
+                    }
+                  }}>
                   <Box sx={eventsAreaStyles}>
                     <Typography>AMZN Earnings Report</Typography>
                   </Box>
