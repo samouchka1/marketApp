@@ -50,13 +50,13 @@ const eventsAreaStyles = {
 
 const Welcome = () => {
   return (
-    <Container maxWidth={false}>
+    <Container maxWidth={false} sx={{mb: '10%'}}>
       <Slide direction="down">
         <Box>
           <Paper
             sx={{
               margin: {md: '1rem auto', xs: '0'},
-              padding: { md: '2rem', xs: '1rem'},
+              padding: { md: '3rem', xs: '1rem'},
               background: '#ffffffb0'
             }}
             elevation="5"
