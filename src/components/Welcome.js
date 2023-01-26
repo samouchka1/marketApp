@@ -85,7 +85,7 @@ const Welcome = () => {
                 
               <Box>
                 <Typography variant="h6" sx={{textAlign: 'center', m: '.8rem 0'}}>Upcoming Events</Typography>
-                <Paper sx={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+                <Paper sx={{display: 'flex', flexDirection: 'column', gap: '.5rem'}}>
                   <Box sx={eventsAreaStyles}>
                     <Typography>AMZN Earnings Report</Typography>
                   </Box>
