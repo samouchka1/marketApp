@@ -15,9 +15,12 @@
   background-color: #66666638;
 }
 
+.background {
+  color: #efefefca,
+}
 
 .color1 {
-  color: #22811fca,
+  color: #299526,
 }
 
 .color2 {
@@ -25,7 +28,7 @@
 }
 
 .color3 {
-  color: #767226,
+  color: #969130,
 }
 
 .color4 {

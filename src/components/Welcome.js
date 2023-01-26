@@ -7,15 +7,62 @@ import {
     Divider
 } from '@mui/material';
 import { Slide } from "react-awesome-reveal";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { 
+  Chart as ChartJS, 
+  ArcElement, 
+  Tooltip, 
+  Legend,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+} from 'chart.js';
+import { Pie, Line } from 'react-chartjs-2';
 import {faker} from '@faker-js/faker';
 import '../App.css';
 
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title, 
+  Tooltip, 
+  Legend
+);
 
-export const data = {
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+      display: false,
+    },
+    title: {
+      display: false,
+      text: 'YTD Realized Gains/Losses',
+    },
+  },
+};
+
+const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+export const lineData = {
+  labels,
+  datasets: [
+    {
+      label: '',
+      data: labels.map(() => faker.datatype.number({ min: 1000, max: 1500 })),
+      borderColor: '#299526',
+      backgroundColor: '#20761d',
+    }
+  ],
+};
+
+export const pieData = {
   labels: ['Stocks', 'Indexes', 'Futures', 'Bonds', 'Mutual Funds'],
   datasets: [
     {
@@ -25,7 +72,7 @@ export const data = {
         '#22811f', '#392a86', '#969130', '#891d1d', '#2d848e'
       ],
       borderColor: [
-        '#22811fca', '#392a86ca', '#969130ca', '#891d1dca', '#2d848eca'
+        '#fff', '#fff', '#fff', '#fff', '#fff',
       ],
       borderWidth: 1,
     },
@@ -80,7 +127,7 @@ const Welcome = () => {
             >
 
               <Box sx={{textAlign: 'center'}}>
-                <Typography variant="h6" sx={{m: '.8rem 0'}}>Portfolio</Typography>
+                <Typography variant="h6" sx={{m: '.8rem 0'}}>Portfolio Allocation</Typography>
                 <Paper 
                   sx={{
                     width: {md: '20rem', xs: '14rem'}, 
@@ -92,9 +139,27 @@ const Welcome = () => {
                     }
                   }}
                 >
-                  <Pie data={data} />
+                  <Pie data={pieData} />
                 </Paper>
               </Box>
+
+              <Box sx={{textAlign: 'center'}}>
+                <Typography variant="h6" sx={{m: '.8rem 0'}}>YTD Realized Gains/Losses</Typography>
+                <Paper 
+                  sx={{
+                    width: {md: '20rem', xs: '14rem'}, 
+                    p: '.5rem', 
+                    m:'auto',
+                    '&:hover': {
+                      opacity: '1',
+                      boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)'
+                    }
+                  }}
+                >
+                  <Line options={options} data={lineData} />
+                </Paper>
+              </Box>
+
               <Divider sx={{ display: {md: 'none', xs: 'block'}}} />
                 
               <Box>
