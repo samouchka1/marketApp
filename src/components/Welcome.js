@@ -4,6 +4,7 @@ import {
     Box,
     Paper,
     Typography,
+    Divider
 } from '@mui/material';
 import { Slide } from "react-awesome-reveal";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
@@ -43,8 +44,8 @@ const watchListItemStyles = {
 }
 
 const eventsAreaStyles = {
-  p: '.5rem 1rem',
-  m: '.5rem 1rem'
+  p: '.25rem 1rem',
+  m: '.25rem 1rem'
 }
 
 const Welcome = () => {
@@ -60,7 +61,7 @@ const Welcome = () => {
             }}
             elevation="5"
           >
-            <Typography variant="h5" sx={{textAlign: 'center'}}>
+            <Typography variant="h3" sx={{textAlign: 'center', fontFamily: 'Teko'}}>
               Dashboard
             </Typography>
 
@@ -69,7 +70,8 @@ const Welcome = () => {
                 display: 'flex', 
                 flexDirection: {md: 'row', xs: 'column'}, 
                 justifyContent: 'space-evenly', 
-                alignItems: 'center'
+                alignItems: { md: 'start', xs: 'center'},
+                gap: '1rem'
               }}
             >
 
@@ -79,9 +81,10 @@ const Welcome = () => {
                   <Pie data={data} />
                 </Paper>
               </Box>
-
+              <Divider sx={{ display: {md: 'none', xs: 'block'}}} />
+                
               <Box>
-                <Typography variant="h6" sx={{textAlign: 'center'}}>Upcoming Events</Typography>
+                <Typography variant="h6" sx={{textAlign: 'center', m: '.8rem 0'}}>Upcoming Events</Typography>
                 <Paper sx={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                   <Box sx={eventsAreaStyles}>
                     <Typography>AMZN Earnings Report</Typography>
@@ -96,11 +99,11 @@ const Welcome = () => {
                     <Typography>Employment Data</Typography>
                   </Box>
                 </Paper>
-
               </Box>
+              <Divider sx={{ display: {md: 'none', xs: 'block'}}} />
 
               <Box>
-                <Typography variant="h6" sx={{m: '.8rem 0'}}>Watch List</Typography>
+                <Typography variant="h6" sx={{textAlign: 'center', m: '.8rem 0'}}>Watch List</Typography>
                 <Box 
                   sx={{
                     display: 'flex', 
@@ -113,7 +116,7 @@ const Welcome = () => {
                   <Paper key={item} sx={watchListItemStyles}>
                     <Typography>{item}</Typography>
                     <Typography sx={watchListPercentChangeStyles}>
-                      {faker.datatype.float({ min: 0.5, max: 4, precision: 0.01 })}
+                      +{faker.datatype.float({ min: 0.5, max: 4, precision: 0.01 })}%
                     </Typography>
                   </Paper>
 
