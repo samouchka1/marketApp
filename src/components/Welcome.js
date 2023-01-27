@@ -152,7 +152,7 @@ const Welcome = () => {
               padding: { md: '3rem', xs: '1rem'},
               background: '#ffffffb0'
             }}
-            elevation="5"
+            elevation={5}
           >
             <Typography variant="h3" sx={{textAlign: 'center', fontFamily: 'Teko', caretColor: 'transparent'}}>
               Dashboard
