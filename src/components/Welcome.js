@@ -135,10 +135,10 @@ function createData(ticker, type, amount, date) {
 }
 
 const rows = [
-  createData('SPX', 'BTO', 200, '1/20/2023'),
-  createData('AMZN', 'BTO', 100, '12/7/2022'),
-  createData('GC', 'BTO', 200, '11/20/2022'),
-  createData('TSLA', 'STC', -100, '9/14/2022'),
+  createData('SPX', 'BTO', '+200', '1/20/2023'),
+  createData('AMZN', 'BTO', '+100', '12/7/2022'),
+  createData('GC', 'BTO', '+200', '11/20/2022'),
+  createData('TSLA', 'STC', '-100', '9/14/2022'),
 ];
 
 const Welcome = () => {
