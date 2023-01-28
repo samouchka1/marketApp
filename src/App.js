@@ -108,7 +108,8 @@ const App = () => {
                     fontSize: '1.5rem', 
                     color:'common.white',
                     fontFamily: 'Teko',
-                    letterSpacing: 2
+                    letterSpacing: 2,
+                    caretColor: 'transparent'
                   }}>
                     {section === 'News' ? 'News' : ''}
                     {section === 'Indexes' ? 'Index Charts' : ''}
