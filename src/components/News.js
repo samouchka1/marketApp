@@ -9,6 +9,7 @@ import {
 import { Slide, Fade } from "react-awesome-reveal";
 import {faker} from '@faker-js/faker';
 import { tickers } from '../data/Charts';
+import { redColor, greenColor } from '../App';
 
 const newsItemStyles = {
     // zIndex: 0,
@@ -35,7 +36,11 @@ const News = ({BannerTop}) => {
         <Slide direction="down" delay="1" cascade triggerOnce>
             <Fade cascade duration={500} triggerOnce>
                 {/* {randomTickers.map((news) => ( */}
-                {tickers.map((news) => (
+                {tickers.map((news) => {
+
+                    const randomColor = Math.random() < 0.5 ? greenColor : redColor;
+
+                    return (
                     <Paper key={news} sx={newsItemStyles}>
                         <Link href="#news" sx={{textDecoration: 'none', color: '#3e3e3e'}}>
                             <Box sx={{display: 'flex', alignItems: 'center'}}>
@@ -45,8 +50,12 @@ const News = ({BannerTop}) => {
                                 <Typography sx={{fontSize: {md: '19px', xs: '17px'}, m: '1rem', fontWeight: '600'}}>
                                     {faker.lorem.lines(1)}
                                 </Typography>
-                                <Typography sx={{color: 'success.main',}}>
+                                <Typography sx={{color: randomColor}}>
                                     ${[news]}
+                                </Typography>
+                                <Typography sx={{color: randomColor}}>
+                                    <span style={{marginLeft: '.75rem'}}>{randomColor === greenColor ? `+` : `-`}</span> 
+                                    {faker.datatype.float({ min: 0.5, max: 4, precision: 0.01 })}%
                                 </Typography>
                             </Box>
                             <Typography variant="body2">
@@ -54,7 +63,7 @@ const News = ({BannerTop}) => {
                             </Typography>
                         </Link>
                     </Paper>
-                ))}
+                )})}
             </Fade>
         </Slide>
         {/* <Typography>{faker.date.recent()}</Typography> */}

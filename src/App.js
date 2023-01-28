@@ -37,6 +37,10 @@ const theme = createTheme({
   }
 })
 
+//WATCH LIST COLOR CHANGE (=/-%s)
+export const greenColor = "success.main";
+export const redColor = "#d52929";
+
           //props
 const App = () => {
 

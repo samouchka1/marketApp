@@ -27,7 +27,7 @@ import {
 import { Pie, Line } from 'react-chartjs-2';
 import {faker} from '@faker-js/faker';
 import '../App.css';
-
+import { redColor, greenColor } from '../App';
 
 ChartJS.register(
   ArcElement,
@@ -88,11 +88,6 @@ export const pieData = {
     },
   ],
 };
-
-
-const watchListPercentChangeStyles = {
-  color: 'success.main'
-}
 
 const watchListItemStyles = {
   display: 'flex',
@@ -168,6 +163,7 @@ const Welcome = () => {
               }}
             >
 
+               {/*PIE CHART */}
               <Box sx={{textAlign: 'center'}}>
                 <Typography variant="h6" sx={{m: '.8rem 0'}}>Portfolio Allocation</Typography>
                 <Paper 
@@ -201,6 +197,7 @@ const Welcome = () => {
 
                   <Line options={options} data={lineData} />
 
+                  {/*TRADE LOG */}
                   <Box sx={{display: 'flex', flexDirection:'column', justifyContent: 'space-between', m: 'auto'}}>
                     <Typography sx={{mt:'1rem'}}>Trade Log</Typography>
                     <TableContainer>
@@ -231,7 +228,7 @@ const Welcome = () => {
 
               <Divider sx={{ display: {md: 'none', xs: 'block'}}} />
                 
-              <Box>
+              <Box> {/*ECONOMIC EVENTS */}
                 <Typography variant="h6" sx={{textAlign: 'center', m: '.8rem 0'}}>Upcoming Events</Typography>
                 <Paper 
                   sx={{
@@ -256,7 +253,7 @@ const Welcome = () => {
 
               <Divider sx={{ display: {md: 'none', xs: 'block'}}} />
 
-              <Box>
+              <Box> {/*WATCHLIST */}
                 <Typography variant="h6" sx={{textAlign: 'center', m: '.8rem 0'}}>Watch List</Typography>
                 <Box 
                   sx={{
@@ -266,15 +263,20 @@ const Welcome = () => {
                     gap: '.25rem'
                   }}
                 >
-                  {['SPX', 'VIX', 'AMZN', 'GC', 'CL', 'ZW', 'TNX'].map((item) => (
-                  <Paper key={item} sx={watchListItemStyles}>
-                    <Typography>{item}</Typography>
-                    <Typography sx={watchListPercentChangeStyles}>
-                      +{faker.datatype.float({ min: 0.5, max: 4, precision: 0.01 })}%
-                    </Typography>
-                  </Paper>
+                  {['SPX', 'VIX', 'AMZN', 'GC', 'CL', 'ZW', 'TNX'].map((item) => {
 
-                  ))}
+                    const randomColor = Math.random() < 0.5 ? greenColor : redColor;
+
+                    return (
+                      <Paper key={item} sx={watchListItemStyles}>
+                        <Typography>{item}</Typography>
+                        <Typography sx={{color: randomColor}}>
+                            <span>{randomColor === greenColor ? `+` : `-`}</span> 
+                            {faker.datatype.float({ min: 0.5, max: 4, precision: 0.01 })}%
+                        </Typography>
+                      </Paper>
+
+                  )})}
                 </Box>
               </Box>
 
