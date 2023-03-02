@@ -41,10 +41,9 @@ const theme = createTheme({
 export const greenColor = "success.main";
 export const redColor = "#d52929";
 
-          //props
+
 const App = () => {
 
-  // const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -121,9 +120,6 @@ const App = () => {
       </Box>
     )
   }
-    
-
-  // const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
     <ThemeProvider theme={theme}>

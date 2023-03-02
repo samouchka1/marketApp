@@ -9,7 +9,8 @@ import {
 } from '@mui/material';
 import { Fade } from "react-awesome-reveal";
 import {faker} from '@faker-js/faker';
-import DehazeIcon from '@mui/icons-material/Dehaze';
+// import DehazeIcon from '@mui/icons-material/Dehaze';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -83,7 +84,7 @@ const FutureCharts = ({BannerTop}) => {
                             handleClickOpen(); 
                             selectValue(`${index.name}`) //chart js access label styles
                         }}>
-                            <DehazeIcon fontSize="small" sx={chartButtonStyles} />
+                            <ShowChartIcon fontSize="small" sx={chartButtonStyles} />
                         </Button>
                     </Paper>
                 </Grid>
