@@ -97,7 +97,7 @@ const IndexCharts = ({BannerTop}) => {
                     onClose={handleClose}
                     sx={{marginTop: '2.5rem'}}
                 >
-                    <Box>
+                    <Box sx={{padding: '1rem'}}>
                         {IndexData.map((index) => (
                             value === index.name ? 
                                 <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
