@@ -144,7 +144,7 @@ const Welcome = () => {
           <Paper
             sx={{
               margin: {md: '1rem auto', xs: '0'},
-              padding: { md: '3rem', xs: '1rem'},
+              padding: { md: '3rem', xs: '2rem 1rem'},
               background: '#ffffffb0'
             }}
             elevation={5}
