@@ -11,6 +11,7 @@ import { Fade } from "react-awesome-reveal";
 import {faker} from '@faker-js/faker';
 // import DehazeIcon from '@mui/icons-material/Dehaze';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
+import CloseIcon from '@mui/icons-material/Close';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -95,7 +96,15 @@ const FutureCharts = ({BannerTop}) => {
                 onClose={handleClose}
                 sx={{marginTop: '2.5rem'}}
             >
-                <Box>
+                <Box sx={{padding: '1rem'}}>
+                    <div style={{textAlign: 'right'}}>
+                        <Button
+                            onClick={handleClose}
+                            sx={{color: 'error.main'}}
+                        >
+                            <CloseIcon />
+                        </Button>
+                    </div>
                     {FuturesData.map((index) => (
                         value === index.name ? 
                             <Box sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
