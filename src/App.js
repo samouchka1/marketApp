@@ -73,7 +73,7 @@ const App = () => {
             <CloseIcon />
           </IconButton>
           <List>
-            {['News', 'Indexes', 'Futures', 'Stocks'].map((text) => (
+            {['News', 'Indices', 'Futures', 'Stocks'].map((text) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton 
                   className={section === text ? 'Mui-selected' : undefined}
@@ -111,9 +111,9 @@ const App = () => {
                     caretColor: 'transparent'
                   }}>
                     {section === 'News' ? 'News' : ''}
-                    {section === 'Indexes' ? 'Index Charts' : ''}
-                    {section === 'Futures' ? 'Futures Charts' : ''}
-                    {section === 'Stocks' ? 'Stock Charts' : ''}
+                    {section === 'Indices' ? 'Indices' : ''}
+                    {section === 'Futures' ? 'Futures' : ''}
+                    {section === 'Stocks' ? 'Stocks' : ''}
                 </Typography>
             </Box>
         </Slide>
@@ -238,7 +238,7 @@ const App = () => {
 
             {section === '' ? <Welcome /> : undefined }
             {section === 'News' ? <News BannerTop={BannerTop} /> : undefined }
-            {section === 'Indexes' ? <IndexCharts BannerTop={BannerTop} /> : undefined }
+            {section === 'Indices' ? <IndexCharts BannerTop={BannerTop} /> : undefined }
             {section === 'Futures' ? <FutureCharts BannerTop={BannerTop} /> : undefined }
             {section === 'Stocks' ? <StockCharts BannerTop={BannerTop} /> : undefined }
             
